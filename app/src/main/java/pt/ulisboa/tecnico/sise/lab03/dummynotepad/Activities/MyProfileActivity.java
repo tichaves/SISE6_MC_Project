@@ -13,15 +13,21 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class MyProfileActivity  extends AppCompatActivity {
-
     private static final String LOG_TAG = "InSureApp - MyProfileActivity";
+    private Button buttonMenu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-/*
+        buttonMenu = (Button) findViewById(R.id.my_profile_btn_menu);
+
+        button
+
+
+
         // set up the listener of the done button
         final Button buttonDone = (Button) findViewById(R.id.my_profile_btn_menu);
         buttonDone.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +57,6 @@ public class MyProfileActivity  extends AppCompatActivity {
         TextView noteBodyTextView = (TextView) findViewById(R.id.read_note_text);
         noteBodyTextView.setText(note.getBody());
 
- */
+ 
     }
 }

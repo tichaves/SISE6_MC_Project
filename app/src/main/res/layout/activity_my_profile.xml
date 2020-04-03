@@ -36,45 +36,59 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/client_name_input"
+        <TextView
+            android:id="@+id/myprofile_act_insure_policy_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:text="Insure Policy:" />
 
-        <EditText
-            android:id="@+id/client_name_profile"
+        <TextView
+            android:id="@+id/myprofile_act_insure_policy_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/myprofile_act_name_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:text="Name:" />
 
-        <EditText
-            android:id="@+id/client_nif_profile"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/myprofile_act_nif_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:text="NIF:" />
 
-        <EditText
-            android:id="@+id/client_adress_profile"
+        <TextView
+            android:id="@+id/myprofile_act_nif_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/myprofile_act_adress_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:text="Adress:" />
 
-        <EditText
-            android:id="@+id/client_brith_profile"
+        <TextView
+            android:id="@+id/myprofile_act_adress_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/myprofile_act_birth_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Birthday:" />
+            android:text="Brithday" />
+
+        <TextView
+            android:id="@+id/myprofile_act_birth_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,7 +96,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/menu_button"
+                android:id="@+id/my_profile_btn_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
