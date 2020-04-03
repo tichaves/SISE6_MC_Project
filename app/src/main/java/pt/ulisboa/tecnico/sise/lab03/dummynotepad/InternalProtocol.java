@@ -18,4 +18,5 @@ public class InternalProtocol {
 
     // relevant for the read note activity
     public static final String READ_NOTE_INDEX    = "NOTE_INDEX";
+    public static final String READ_CLAIM_INDEX   = "CLAIM_INDEX";
 }
