@@ -12,3 +12,4 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_claim_description);
     }
 }
+
