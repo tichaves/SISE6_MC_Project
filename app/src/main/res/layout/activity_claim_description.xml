@@ -6,77 +6,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/claim_description_menu_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="614dp" />
-
-    <Button
-        android:id="@+id/claim_description_back_brn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="614dp" />
-
     <LinearLayout
-        android:id="@+id/claim_description_title"
         android:layout_width="409dp"
-        android:layout_height="612dp"
+        android:layout_height="641dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toTopOf="@+id/claim_description_menu_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/Insure_logo"
-            android:layout_width="match_parent"
-            android:layout_height="82dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:id="@+id/insure_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="81dp"
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image" />
 
         <TextView
             android:id="@+id/claim_description_title"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:text="CLAIM TITLE" />
+            android:layout_height="44dp"
+            android:text="@string/claim_description_title" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/Claim_description_ID_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Claim ID:" />
-
-            <EditText
-                android:id="@+id/claim_description_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Date:" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/claim_description_description"
+        <EditText
+            android:id="@+id/claim_description_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description" />
+            android:ems="10"
+            android:hint="@string/claim_description_id"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@string/claim_description_id" />
+
+        <EditText
+            android:id="@+id/claim_description_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/claim_description_date"
+            android:inputType="date" />
 
         <TextView
-            android:id="@+id/claim_description_input_text"
+            android:id="@+id/claim_description_title"
             android:layout_width="match_parent"
-            android:layout_height="420dp"
-            android:text="claim description is showned here" />
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/claim_description_menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/claim_description_menu_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/claim_description_back_btn"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/claim_description_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/claim_description_back_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

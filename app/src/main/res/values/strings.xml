@@ -15,5 +15,12 @@
     <string name="read_note_title">Note Title</string>
     <string name="read_note_text">Note text</string>
     <string name="read_note_btn_done">Done</string>
+    <string name="claim_description_menu_btn">Menu</string>
+    <string name="claim_description_back_btn">Back</string>
+    <string name="insure_logo">insure_logo</string>
+    <string name="claim_description_title">Claim_title</string>
+    <string name="claim_description_id">Claim_ID</string>
+    <string name="claim_description_date">Claim_date</string>
+    <string name="claim_description_dscp">Claim_description</string>
 </resources>
 
