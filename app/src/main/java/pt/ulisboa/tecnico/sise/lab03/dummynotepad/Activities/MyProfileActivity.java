@@ -22,14 +22,19 @@ public class MyProfileActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-        buttonMenu = (Button) findViewById(R.id.my_profile_btn_menu);
+        buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
 
-        button
+        buttonMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            
+            }
+        });
 
 
 
         // set up the listener of the done button
-        final Button buttonDone = (Button) findViewById(R.id.my_profile_btn_menu);
+        final Button buttonDone = (Button) findViewById(R.id.settings_act_btn_menu);
         buttonDone.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // just finish the current activity

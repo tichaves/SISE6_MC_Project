@@ -44,7 +44,7 @@
 
 
             <Button
-                android:id="@+id/logout_button"
+                android:id="@+id/settings_logout_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
@@ -52,7 +52,7 @@
                 android:textColor="#000000" />
 
             <Button
-                android:id="@+id/my_profile_btn_menu"
+                android:id="@+id/settings_act_btn_menu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
