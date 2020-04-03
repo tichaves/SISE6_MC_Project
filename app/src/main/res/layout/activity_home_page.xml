@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/insure_logo"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:contentDescription="logo image "
+            app:srcCompat="@drawable/insure_image" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="419dp"
+            android:layout_height="45dp"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/home_page_my_profile_btn"
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:drawableTop="@drawable/profile_image"
+            android:text="My Profile" />
+
+        <Button
+            android:id="@+id/home_page_claim_history_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/documents"
+            android:text="Claim History" />
+
+        <Button
+            android:id="@+id/home_page_settings_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/settings"
+            android:text="Settings" />
+
+        <Button
+            android:id="@+id/home_page_new_claim_btn"
+            text="New Claim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/pneu"
+            android:text="New Claim" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/home_page_help_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Help?" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

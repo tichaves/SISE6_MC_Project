@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/claim_description_menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="614dp" />
+
+    <Button
+        android:id="@+id/claim_description_back_brn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="614dp" />
+
+    <LinearLayout
+        android:id="@+id/claim_description_title"
+        android:layout_width="409dp"
+        android:layout_height="612dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/Insure_logo"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/claim_description_title"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:text="CLAIM TITLE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/Claim_description_ID_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Claim ID:" />
+
+            <EditText
+                android:id="@+id/claim_description_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Date:" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/claim_description_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/claim_description_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:text="claim description is showned here" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

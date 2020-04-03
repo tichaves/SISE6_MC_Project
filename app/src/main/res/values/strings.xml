@@ -1,0 +1,19 @@
+<resources>
+    <string name="login_btn_login">Login</string>
+    <string name="login_logo">Logo</string>
+
+    <string name="app_name">DummyNotepad</string>
+    <string name="my_notes_title">My Notes</string>
+    <string name="list_notes_btn_new_note">New Note</string>
+    <string name="list_notes">List Notes</string>
+    <string name="read_note">Read Note</string>
+    <string name="new_note">New Note</string>
+    <string name="insert_note_hint_insert_title">Insert Title</string>
+    <string name="new_note_hint_insert_note">Insert Note</string>
+    <string name="new_note_btn_ok">Ok</string>
+    <string name="new_note_btn_cancel">Cancel</string>
+    <string name="read_note_title">Note Title</string>
+    <string name="read_note_text">Note text</string>
+    <string name="read_note_btn_done">Done</string>
+</resources>
+
