@@ -13,4 +13,3 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
     }
 }
 
-...
