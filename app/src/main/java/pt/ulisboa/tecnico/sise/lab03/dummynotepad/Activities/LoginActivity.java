@@ -23,11 +23,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+/*
         buttonLogin      = (Button)  findViewById(R.id.login_act_login_btn);
         editTextUser     = (EditText)findViewById(R.id.login_act_email_input);
         editTextPassword = (EditText)findViewById(R.id.login_act_pass_input);
-
+*/
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "Login debug message!");
