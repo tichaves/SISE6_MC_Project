@@ -28,7 +28,7 @@ public class NewClaimActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_new_claim);
 
         buttonSubmit  = (Button)  findViewById(R.id.new_claim_btn_submit);
-        buttonCancel  = (Button)  findViewById(R.id.new_note_btn_cncl);
+        buttonCancel  = (Button)  findViewById(R.id.new_claim_btn_cancel);
         editTextTitle = (EditText)findViewById(R.id.new_claim_title_input);
         editTextPlate = (EditText)findViewById(R.id.new_claim_plate_input);
         editTextDate  = (EditText)findViewById(R.id.new_claim_date_input);
@@ -38,35 +38,39 @@ public class NewClaimActivity  extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "Submit claim debug message!");
                 Log.d(LOG_TAG, editTextTitle.getText().toString());
-                String noteTitle = editTextTitle.getText().toString();
-                String noteBody = editTextDesc.getText().toString();
+                String claimTitle = editTextTitle.getText().toString();
+                String claimPlate = editTextPlate.getText().toString();
+                String claimDate = editTextDate.getText().toString();
+                String claimDesc = editTextDesc.getText().toString();
 
                 // check the title
-                if (noteTitle.equals("")) {
+                if (claimTitle.equals("")) {
                     Toast.makeText(v.getContext(), "Write a note title", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 // return an intent containing the title and body of the new note
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra(InternalProtocol.KEY_NEW_NOTE_TITLE, noteTitle);
-                resultIntent.putExtra(InternalProtocol.KEY_NEW_NOTE_BODY, noteBody);
+                resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_TITLE, claimTitle);
+                resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_PLATE, claimPlate);
+                resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_DATE, claimDate);
+                resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION, claimDesc);
                 setResult(Activity.RESULT_OK, resultIntent);
                 // write a toast message
-                Toast.makeText(v.getContext(), "Note saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Claim saved", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
 
-        /*buttonCancel.setOnClickListener(new View.OnClickListener() {
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // return the return code only; no intent message is required
                 setResult(Activity.RESULT_CANCELED);
                 // write a toast message
-                Toast.makeText(v.getContext(), "Changed button title!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Canceled!", Toast.LENGTH_SHORT).show();
                 // finish activity
                 finish();
             }
-        });*/
+        });
     }
 }
