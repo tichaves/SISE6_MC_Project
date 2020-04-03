@@ -21,7 +21,7 @@ public class MyProfileActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-
+/*
         // set up the listener of the done button
         final Button buttonDone = (Button) findViewById(R.id.my_profile_btn_menu);
         buttonDone.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +50,7 @@ public class MyProfileActivity  extends AppCompatActivity {
         noteTextView.setText(note.getTitle());
         TextView noteBodyTextView = (TextView) findViewById(R.id.read_note_text);
         noteBodyTextView.setText(note.getBody());
-    }
 
+ */
+    }
 }
