@@ -14,7 +14,7 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class NewClaimActivity  extends AppCompatActivity {
-    private static final String LOG_TAG = "SISE - NewNote";
+    private static final String LOG_TAG = "InSureApp - NewClaim";
     private Button buttonSubmit;
     private Button buttonCancel;
     EditText editTextTitle;
