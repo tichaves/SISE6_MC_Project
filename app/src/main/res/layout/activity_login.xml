@@ -18,22 +18,22 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/login_act_inSure_img"
+                android:id="@+id/insure_logo"
                 android:layout_width="match_parent"
-                android:layout_height="111dp"
+                android:layout_height="104dp"
                 android:contentDescription="@string/login_logo"
-                tools:srcCompat="@drawable/ic_launcher_foreground" />
+                tools:srcCompat="@drawable/insure_image" />
 
             <TextView
                 android:id="@+id/login_act_user_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="User" />
+                android:text="@string/login_act_user_text" />
 
             <EditText
                 android:id="@+id/login_act_email_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="67dp"
                 android:ems="10"
                 android:inputType="textEmailAddress" />
 
@@ -41,21 +41,21 @@
                 android:id="@+id/login_act_pass_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Password" />
+                android:text="@string/login_act_pass_text" />
 
             <EditText
                 android:id="@+id/login_act_pass_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="76dp"
                 android:ems="10"
                 android:inputType="textPassword" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/login_act_login_btn"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login_btn_login" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/login_act_login_btn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_btn_login" />
+</LinearLayout>

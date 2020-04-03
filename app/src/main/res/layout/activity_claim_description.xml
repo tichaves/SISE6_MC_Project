@@ -9,11 +9,12 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="641dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/claim_description_menu_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +29,10 @@
             app:srcCompat="@drawable/insure_image" />
 
         <TextView
-            android:id="@+id/claim_description_title"
+            android:id="@+id/claim_title_description"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="@string/claim_description_title" />
+            android:layout_height="50dp"
+            android:text="@string/claim_title_description" />
 
         <EditText
             android:id="@+id/claim_description_id"
@@ -52,10 +53,16 @@
             android:inputType="date" />
 
         <TextView
-            android:id="@+id/claim_description_title"
+            android:id="@+id/claim_dscp_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="35dp"
+            android:text="@string/claim_dscp_description" />
+
+        <TextView
+            android:id="@+id/claim_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:text="@string/claim_description_text" />
 
     </LinearLayout>
 

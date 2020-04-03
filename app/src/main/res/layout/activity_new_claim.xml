@@ -16,24 +16,26 @@
         tools:layout_editor_absoluteY="1dp">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/insure_logo"
             android:layout_width="match_parent"
             android:layout_height="66dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/new_claim_image"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:layout_height="95dp"
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image" />
 
         <EditText
-            android:id="@+id/new_claim_page"
+            android:id="@+id/new_claim_page_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="NEW CLAIM" />
+            android:text="@string/new_claim_page_title" />
 
         <EditText
             android:id="@+id/new_claim_title_input"
@@ -54,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Plate No:" />
+                android:text="@string/new_claim_plate_input" />
 
             <EditText
                 android:id="@+id/new_claim_date_input"
@@ -69,16 +71,16 @@
         <TextView
             android:id="@+id/new_claim_desciption_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="31dp"
             android:text="Description" />
 
         <EditText
             android:id="@+id/new_claim_desciption_input"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="221dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Insert claim desciption here" />
+            android:text="@string/new_claim_desciption_input" />
 
 
     </LinearLayout>
@@ -88,7 +90,7 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="105dp"
         android:layout_height="52dp"
-        android:text="SUBMIT"
+        android:text="@string/new_claim_btn_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -100,7 +102,7 @@
         android:id="@+id/new_claim_btn_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
+        android:text="@string/nnew_claim_btn_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"

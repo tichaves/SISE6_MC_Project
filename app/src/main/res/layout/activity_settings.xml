@@ -9,21 +9,29 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="601dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/insure_logo"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="66dp"
             android:contentDescription="logo image "
             app:srcCompat="@drawable/insure_image" />
 
         <ImageView
             android:id="@+id/settings_image"
             android:layout_width="match_parent"
-            android:layout_height="128dp"
+            android:layout_height="136dp"
             app:srcCompat="@drawable/settings" />
 
         <TextView
@@ -32,7 +40,7 @@
             android:layout_height="53dp"
             android:gravity="center"
             android:paddingVertical="@dimen/activity_vertical_margin"
-            android:text="Settings"
+            android:text="@string/textView_settings"
             android:textColor="#020202"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -48,7 +56,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Log out"
+                android:text="@string/settings_logout_btn"
                 android:textColor="#000000" />
 
             <Button
@@ -56,8 +64,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Menu"
+                android:text="@string/settings_act_btn_menu"
                 android:textColor="#050505" />
         </LinearLayout>
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
