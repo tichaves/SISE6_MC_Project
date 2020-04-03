@@ -21,6 +21,7 @@ public class NewClaimActivity  extends AppCompatActivity {
     EditText editTextPlate;
     EditText editTextDate;
     EditText editTextDesc;
+    dfjdsagfdsagfg
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
