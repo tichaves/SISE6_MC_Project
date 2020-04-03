@@ -18,14 +18,14 @@ public class SettingsActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        buttonMenu = (Button) findViewById(R.id.settings_logout_btn);
-        buttonLogout = (Button) findViewById(R.id.settings_act_btn_menu);
+        buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
+        buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
-
+                startActivity(intent);
             }
         });
 
@@ -33,6 +33,7 @@ public class SettingsActivity  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, HomePageActivity.class);
+                startActivity(intent);
             }
         });
     }
