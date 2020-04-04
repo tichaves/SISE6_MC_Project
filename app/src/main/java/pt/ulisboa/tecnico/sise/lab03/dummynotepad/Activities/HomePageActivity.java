@@ -103,6 +103,8 @@ public class HomePageActivity extends AppCompatActivity {
                     this.claimList = globalState.getClaimList();
                     this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
                     globalState.setListClaim(this.claimList);
+
+                    Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
 /*
                     // refresh the list on screen
                     _listView.setAdapter(new ArrayAdapter<>(this,
@@ -117,6 +119,7 @@ public class HomePageActivity extends AppCompatActivity {
             default:
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
+        Log.d(LOG_TAG, "No Claims: " + claimList.size());
     }
 
 }

@@ -31,6 +31,7 @@ public class MyClaimsActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_claim_list);
 
         globalState = (GlobalState) getApplicationContext();
+//        Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
 
         // place the note list in the application domain
         GlobalState globalState = (GlobalState) getApplicationContext();
