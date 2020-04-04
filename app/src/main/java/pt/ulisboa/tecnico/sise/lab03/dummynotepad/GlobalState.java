@@ -3,6 +3,7 @@ package pt.ulisboa.tecnico.sise.lab03.dummynotepad;
 import android.app.Application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Note;
@@ -18,9 +19,9 @@ public class GlobalState extends Application {
         return _noteList;
     }
 
-    private ArrayList<Claim> claimList;
+    private ArrayList<Claim> claimList = new ArrayList<Claim>();
 
-    public void setClaimList(ArrayList<Claim> claimList) {
+    public void setListClaim(ArrayList<Claim> claimList) {
         this.claimList = claimList;
     }
 

@@ -33,7 +33,8 @@
             android:id="@+id/home_page_menu_title"
             android:layout_width="419dp"
             android:layout_height="45dp"
-            android:text="@string/home_page_menu_title" />
+            android:text="Hey! Welcome to InSure"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/home_page_claim_history_btn"
