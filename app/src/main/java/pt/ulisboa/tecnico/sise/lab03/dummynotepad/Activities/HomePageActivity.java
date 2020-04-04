@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
@@ -21,12 +24,15 @@ public class HomePageActivity extends AppCompatActivity {
     private Button buttonNewClaim;
     private Button buttonHelp;
 
+    private ArrayList<Claim> claimList;
     private GlobalState globalState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        globalState = (GlobalState) getApplicationContext();
 
         buttonMyProfile = (Button)  findViewById(R.id.home_page_my_profile_btn);
         buttonMyClaims  = (Button) findViewById(R.id.home_page_claim_history_btn);
@@ -81,9 +87,6 @@ public class HomePageActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        GlobalState globalState = (GlobalState) getApplicationContext();
-
         switch (requestCode) {
             case InternalProtocol.NEW_CLAIM_REQUEST:
 
@@ -97,8 +100,9 @@ public class HomePageActivity extends AppCompatActivity {
 
                     // update the domain data structures
 
-                    //this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
-                    globalState.setClaim(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
+                    this.claimList = globalState.getClaimList();
+                    this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
+                    globalState.setListClaim(this.claimList);
 /*
                     // refresh the list on screen
                     _listView.setAdapter(new ArrayAdapter<>(this,
