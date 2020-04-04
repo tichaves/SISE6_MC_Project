@@ -1,5 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,6 +16,10 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 public class MyProfileActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - MyProfileActivity";
     private Button buttonMenu;
+    private TextView name;
+    private TextView insure_policy_number;
+    private TextView nif;
+    private TextView birthday;
 
 
     @Override
@@ -27,20 +32,11 @@ public class MyProfileActivity  extends AppCompatActivity {
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MyProfileActivity.this, HomePageActivity.class);
+                startActivity(intent);
             }
         });
 
-
-
-        // set up the listener of the done button
-        final Button buttonDone = (Button) findViewById(R.id.settings_act_btn_menu);
-        buttonDone.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // just finish the current activity
-                finish();
-            }
-        });
 
         // display the title and body of the note identified by the index parameter
         Bundle extras = getIntent().getExtras();
