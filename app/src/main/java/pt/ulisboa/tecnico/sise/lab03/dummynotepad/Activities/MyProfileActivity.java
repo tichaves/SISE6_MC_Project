@@ -37,27 +37,6 @@ public class MyProfileActivity  extends AppCompatActivity {
             }
         });
 
-
-        // display the title and body of the note identified by the index parameter
-        Bundle extras = getIntent().getExtras();
-        if (extras == null) {
-            Log.d(InternalProtocol.LOG, "Internal error: Index cannot be null.");
-            finish();
-            return;
-        }
-        int index = extras.getInt(InternalProtocol.READ_NOTE_INDEX);
-        Log.d(InternalProtocol.LOG, "Index:" + index);
-
-        // obtain a reference to the note's data structure
-        GlobalState context = (GlobalState) getApplicationContext();
-        Note note = context.getNoteList().get(index);
-
-        // update the UI
-        TextView noteTextView = (TextView) findViewById(R.id.read_note_title);
-        noteTextView.setText(note.getTitle());
-        TextView noteBodyTextView = (TextView) findViewById(R.id.read_note_text);
-        noteBodyTextView.setText(note.getBody());
-
  
     }
 }

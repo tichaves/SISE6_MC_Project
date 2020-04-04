@@ -2,7 +2,7 @@ package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 
 import android.widget.TextView;
 
-public class Customer {
+public class Customer extends Person {
     public final static String TAG= "CallTask";
     private String _username;
     private String _password;
@@ -15,7 +15,7 @@ public class Customer {
 
 
     public Customer(String username, String password, int sessionId, int policyNumber,
-                     List<Claim> claimList) {
+                    Person person) {
         super(person);
         _username = username;
         _password = password;
