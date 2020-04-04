@@ -33,10 +33,10 @@ public class MyProfileActivity  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyProfileActivity.this, HomePageActivity.class);
+
                 startActivity(intent);
             }
         });
 
- 
     }
 }

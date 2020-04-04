@@ -20,9 +20,10 @@
             <ImageView
                 android:id="@+id/login_logo"
                 android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:contentDescription="@string/login_logo"
-                tools:srcCompat="@drawable/insure_image" />
+                android:layout_height="57dp"
+                android:contentDescription="logo image "
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/insure_image" />
 
             <TextView
                 android:id="@+id/login_act_user_text"

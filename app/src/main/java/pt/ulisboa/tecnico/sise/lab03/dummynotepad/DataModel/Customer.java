@@ -8,7 +8,7 @@ public class Customer extends Person {
     private String _password;
     private int _policyNumber;
     private int _sessionId= -1;
-  //  private final List<Claim> _claimList;
+    //  private final List<Claim> _claimList;
  //   private final List<ClaimRecord>;
  //   private final List<String> _plateList;
 
