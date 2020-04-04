@@ -6,36 +6,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:contentDescription="@string/insure_logo"
+        app:srcCompat="@drawable/insure_image"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/new_claim_image"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:contentDescription="@string/insure_logo"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/login_logo"
+        app:srcCompat="@drawable/pneu"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <TextView
+        android:id="@+id/new_claim_page_title"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/new_claim_page_title"
+        android:textColor="#020202"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+        tools:layout_editor_absoluteX="-1dp" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_logo"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
-
-        <ImageView
-            android:id="@+id/login_logo"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:contentDescription="@string/insure_logo"
-            app:srcCompat="@drawable/insure_image" />
-
-        <ImageView
-            android:id="@+id/new_claim_image"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:contentDescription="@string/insure_logo"
-            app:srcCompat="@drawable/pneu" />
-
-        <EditText
-            android:id="@+id/new_claim_page_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/new_claim_page_title" />
+        tools:layout_editor_absoluteX="1dp">
 
         <EditText
             android:id="@+id/new_claim_title_input"
@@ -75,7 +88,7 @@
             android:text="Description" />
 
         <EditText
-            android:id="@+id/new_claim_desciption_input"
+            android:id="@+id/new_claim_description_input"
             android:layout_width="match_parent"
             android:layout_height="221dp"
             android:ems="10"

@@ -32,7 +32,7 @@ public class NewClaimActivity  extends AppCompatActivity {
         editTextTitle = (EditText)findViewById(R.id.new_claim_title_input);
         editTextPlate = (EditText)findViewById(R.id.new_claim_plate_input);
         editTextDate  = (EditText)findViewById(R.id.new_claim_date_input);
-        editTextDesc  = (EditText)findViewById(R.id.new_claim_desciption_input);
+        editTextDesc  = (EditText)findViewById(R.id.new_claim_description_input);
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
