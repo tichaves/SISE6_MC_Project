@@ -8,9 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
@@ -21,7 +20,8 @@ public class HomePageActivity extends AppCompatActivity {
     private Button buttonSettings;
     private Button buttonNewClaim;
     private Button buttonHelp;
-    private ArrayList<Claim> claimList;
+
+    private GlobalState globalState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +82,8 @@ public class HomePageActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        GlobalState globalState = (GlobalState) getApplicationContext();
+
         switch (requestCode) {
             case InternalProtocol.NEW_CLAIM_REQUEST:
 
@@ -94,7 +96,9 @@ public class HomePageActivity extends AppCompatActivity {
                     String claimDescription = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION);
 
                     // update the domain data structures
-                    this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
+
+                    //this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
+                    globalState.setClaim(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
 /*
                     // refresh the list on screen
                     _listView.setAdapter(new ArrayAdapter<>(this,

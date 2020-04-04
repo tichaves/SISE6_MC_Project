@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
@@ -18,9 +19,9 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class MyClaimsActivity  extends AppCompatActivity {
-    private static final String LOG_TAG = "SISE - ListNotes";
+    private static final String LOG_TAG = "InSureApp - My Claims";
     private ListView listView;
-    private ArrayList<Claim> claimList;
+    private List<Claim> claimList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,8 @@ public class MyClaimsActivity  extends AppCompatActivity {
         // place the note list in the application domain
         this.claimList = new ArrayList<Claim>();
         GlobalState globalState = (GlobalState) getApplicationContext();
-        globalState.setClaimList(this.claimList);
+        //globalState.setClaimList(this.claimList);
+        this.claimList = globalState.getClaimList();
 
         // assign adapter to list view
         this.listView = (ListView) findViewById(R.id.my_claims_list_list);

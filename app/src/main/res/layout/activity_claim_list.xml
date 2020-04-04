@@ -47,8 +47,7 @@
             android:id="@+id/my_claims_list_list"
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            tools:itemCount="10"
-            tools:listitem="Claim 1" />
+            tools:itemCount="10" />
 
     </LinearLayout>
 
