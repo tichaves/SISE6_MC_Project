@@ -20,13 +20,12 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:contentDescription="@string/insure_logo"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/login_logo"
         app:srcCompat="@drawable/pneu"
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
-        android:id="@+id/new_claim_page_title"
+        android:id="@+id/new_claim_title"
         android:layout_width="match_parent"
         android:layout_height="53dp"
         android:ems="10"
@@ -36,19 +35,32 @@
         android:textColor="#020202"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
         tools:layout_editor_absoluteX="-1dp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="409dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_logo"
-        tools:ignore="MissingConstraints"
+        android:ems="10"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/new_claim_title"
         tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/new_claim_title_claim"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Title:"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
 
         <EditText
             android:id="@+id/new_claim_title_input"
@@ -56,44 +68,98 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Title:" />
+            android:textSize="18sp" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/new_claim_plate_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/new_claim_plate_input" />
-
-            <EditText
-                android:id="@+id/new_claim_date_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Date:" />
-
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <TextView
-            android:id="@+id/new_claim_desciption_title"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="Description" />
+            android:id="@+id/new_claim_title_claim3"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:text="@string/new_claim_plate_input"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/new_claim_plate_input"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
+
+        <EditText
+            android:id="@+id/new_claim_plate_input"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/new_claim_title_claim2"
+            app:layout_constraintStart_toStartOf="@+id/new_claim_title_claim3" />
+
+        <TextView
+            android:id="@+id/new_claim_title_claim2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Date:"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/new_claim_date_input"
+            app:layout_constraintStart_toStartOf="@+id/new_claim_plate_input"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
+
+        <EditText
+            android:id="@+id/new_claim_date_input"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/new_claim_title_claim2"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/new_claim_description_title"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:text="Description"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/new_claim_description_input"
             android:layout_width="match_parent"
-            android:layout_height="221dp"
+            android:layout_height="200dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/new_claim_desciption_input" />
+            android:inputType="textPersonName" />
 
 
     </LinearLayout>
@@ -106,10 +172,10 @@
         android:text="@string/new_claim_btn_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toEndOf="@+id/new_claim_btn_cancel"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <Button
         android:id="@+id/new_claim_btn_cancel"
@@ -118,9 +184,9 @@
         android:text="@string/new_claim_btn_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.502" />
+        app:layout_constraintVertical_bias="0.2" />
 
 </android.support.constraint.ConstraintLayout>
