@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/insure_logo"
+            android:id="@+id/login_logo"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:contentDescription="logo image "
@@ -43,19 +43,18 @@
             android:text="@string/home_page_claim_history_btn" />
 
         <Button
+            android:id="@+id/home_page_new_claim_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/pneu"
+            android:text="@string/home_page_new_claim_btn" />
+
+        <Button
             android:id="@+id/home_page_my_profile_btn"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:drawableTop="@drawable/profile_image"
             android:text="@string/home_page_my_profile_btn" />
-
-        <Button
-            android:id="@+id/home_page_new_claim_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableTop="@drawable/pneu"
-            android:text="@string/home_page_new_claim_btn"
-            android:text="@string/home_page_new_claim_btn" />
 
         <Button
             android:id="@+id/home_page_settings_btn"

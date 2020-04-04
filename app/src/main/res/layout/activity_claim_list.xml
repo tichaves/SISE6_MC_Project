@@ -23,22 +23,24 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/Insure_logo"
+            android:id="@+id/login_logo"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:layout_height="73dp"
+            app:srcCompat="@drawable/insure_image" />
 
         <ImageView
             android:id="@+id/My_claims_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:layout_height="81dp"
+            android:contentDescription="Image my claims"
+            app:srcCompat="@drawable/documents" />
 
         <TextView
             android:id="@+id/claim_details_my_claims"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="42dp"
-            android:text="MY CLAIMS LIST"
+            android:layout_marginLeft="150dp"
+            android:text="@string/claim_details_my_claims"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:visibility="visible"
             tools:visibility="visible" />

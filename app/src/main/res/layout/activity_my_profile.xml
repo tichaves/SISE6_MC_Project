@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/insure_logo"
+            android:id="@+id/login_logo"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:contentDescription="logo image "

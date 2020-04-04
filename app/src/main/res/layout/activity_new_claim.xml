@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="1dp">
 
         <ImageView
-            android:id="@+id/insure_logo"
+            android:id="@+id/login_logo"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:contentDescription="@string/insure_logo"
@@ -25,9 +25,9 @@
         <ImageView
             android:id="@+id/new_claim_image"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="90dp"
             android:contentDescription="@string/insure_logo"
-            app:srcCompat="@drawable/insure_image" />
+            app:srcCompat="@drawable/pneu" />
 
         <EditText
             android:id="@+id/new_claim_page_title"
@@ -102,7 +102,7 @@
         android:id="@+id/new_claim_btn_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nnew_claim_btn_cancel"
+        android:text="@string/new_claim_btn_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
