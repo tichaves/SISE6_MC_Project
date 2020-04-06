@@ -1,6 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 
-import android.widget.TextView;
+import java.util.List;
 
 public class Customer extends Person {
     public final static String TAG= "CallTask";
@@ -10,19 +10,19 @@ public class Customer extends Person {
     private int _sessionId= -1;
     //  private final List<Claim> _claimList;
  //   private final List<ClaimRecord>;
- //   private final List<String> _plateList;
+    private final List<String> _plateList;
 
 
 
     public Customer(String username, String password, int sessionId, int policyNumber,
-                    Person person) {
+                    Person person, List<String> plateList) {
         super(person);
         _username = username;
         _password = password;
         _sessionId = sessionId;
         _policyNumber = policyNumber;
 //       _claimList = claimList;
-//       _plateList = plateList;
+        _plateList = plateList;
     }
 /*    public Customer(String username, String password, int policyNumber,
                     Person person, List<ClaimRecord> claimList, List<String> plateList) {
@@ -103,9 +103,9 @@ public String getUsername() {
 //        return _claimList;
 //    }
 //
-//    public List<String> getPlateList() {
-//        return _plateList;
-//    }
+    public List<String> getPlateList() {
+       return _plateList;
+    }
 //
 //    public boolean addClaim(ClaimRecord claimRecord) {
 //        return _claimList.add(claimRecord);
@@ -161,7 +161,7 @@ public String getUsername() {
     public String toString() {
         return super.toString() + ", " +
                 "Username:" + _username + ", " +
-//                "Password:" + _password + ", " +
+               "Password:" + _password + ", " +
                 "Policy Number:" + _policyNumber + ".";
     }
 }

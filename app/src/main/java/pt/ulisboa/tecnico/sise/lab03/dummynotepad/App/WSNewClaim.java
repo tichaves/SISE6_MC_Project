@@ -25,7 +25,7 @@ public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
     protected Boolean doInBackground(String... params) {
         try {
             Log.d(TAG,"Claim details: " + params[0] + ", " + params[1] + ", " + params[2]);
-            boolean r = WSHelper.NewClaim(sessionId, params[0], params[1], params[2], params[3]);
+            boolean r = WSHelper.submitNewClaim(sessionId, params[0], params[1], params[2], params[3]);
 
             Log.d(TAG, "Submit new claim => " + r);
             return r;
