@@ -14,6 +14,9 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Person;
+
 public class WSHelper {
     private static final String TAG = "WSHelper";
     private static final String NAMESPACE = "http://pt.ulisboa.tecnico.sise.insure.ws/";
@@ -52,7 +55,7 @@ public class WSHelper {
         int sessionID = Integer.parseInt(makeRequest(METHOD_NAME, username, password));
         return sessionID;
     }
-/*
+
     public static Customer getCustomerInfo(int sessionId) throws Exception {
         final String METHOD_NAME = "getCustomerInfo";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"");     // add "" to convert int to String
@@ -74,7 +77,7 @@ public class WSHelper {
         return null;
     }
 
-    public static ClaimRecord getClaimInfo(int sessionId, int claimId) throws Exception {
+ /*   public static ClaimRecord getClaimInfo(int sessionId, int claimId) throws Exception {
         final String METHOD_NAME = "getClaimInfo";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"", claimId+"");
         try {
