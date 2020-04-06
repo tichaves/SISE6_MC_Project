@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
@@ -23,7 +23,7 @@ public class HomePageActivity extends AppCompatActivity {
     private Button buttonNewClaim;
     private Button buttonHelp;
 
-    private ArrayList<Claim> claimList;
+    private ArrayList<ClaimRecord> claimList;
     private GlobalState globalState;
 
     @Override
@@ -100,7 +100,7 @@ public class HomePageActivity extends AppCompatActivity {
                     // update the domain data structures
 
                     this.claimList = globalState.getClaimList();
-                    this.claimList.add(new Claim(claimTitle, claimPlate, claimDate, claimDescription));
+                    this.claimList.add(new ClaimRecord(claimTitle, claimPlate, claimDate, claimDescription));
                     globalState.setListClaim(this.claimList);
 
                     Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());

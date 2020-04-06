@@ -1,11 +1,11 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 
-public class Claim {
+public class ClaimRecord {
     private String title;
     private String plate;
     private String date;
     private String description;
-    public Claim(String title, String plate, String date, String description) {
+    public ClaimRecord(String title, String plate, String date, String description) {
         this.title = title;
         this.plate = plate;
         this.date = date;

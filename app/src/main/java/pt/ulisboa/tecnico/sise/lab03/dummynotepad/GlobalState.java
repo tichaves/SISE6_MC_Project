@@ -4,18 +4,18 @@ import android.app.Application;
 
 import java.util.ArrayList;
 
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 
 public class GlobalState extends Application {
     private int sessionId;
 
-    private ArrayList<Claim> claimList = new ArrayList<Claim>();
+    private ArrayList<ClaimRecord> claimList = new ArrayList<ClaimRecord>();
 
-    public void setListClaim(ArrayList<Claim> claimList) {
+    public void setListClaim(ArrayList<ClaimRecord> claimList) {
         this.claimList = claimList;
     }
 
-    public ArrayList<Claim> getClaimList() {
+    public ArrayList<ClaimRecord> getClaimList() {
         return this.claimList;
     }
 
