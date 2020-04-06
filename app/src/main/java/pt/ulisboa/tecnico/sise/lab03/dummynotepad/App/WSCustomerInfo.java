@@ -15,7 +15,9 @@ public class WSCustomerInfo extends AsyncTask <String, String, String> {
     private TextView _license_plates;
     private GlobalState globalState;
 
-
-    public WSCustomerInfo(  )
+    @Override
+    protected String doInBackground(String... strings) {
+        return null;
+    }
 
 }

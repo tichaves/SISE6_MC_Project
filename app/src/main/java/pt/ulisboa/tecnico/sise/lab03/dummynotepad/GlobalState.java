@@ -10,6 +10,7 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Note;
 
 public class GlobalState extends Application {
     private ArrayList<Note> _noteList;
+    private int sessionId;
 
     public void setNoteList(ArrayList<Note> noteList) {
         _noteList = noteList;
@@ -27,5 +28,9 @@ public class GlobalState extends Application {
 
     public ArrayList<Claim> getClaimList() {
         return this.claimList;
+    }
+
+    public void setSessionId(int id) {
+        this.sessionId = id;
     }
 }

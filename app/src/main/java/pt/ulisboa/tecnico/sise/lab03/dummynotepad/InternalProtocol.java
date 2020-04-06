@@ -1,8 +1,8 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad;
 
 public class InternalProtocol {
-    public static final String LOG                = "InSureApp";
-    public static int SESSIONID;
+    public static final String LOG        = "InSureApp";
+    public static final String SESSION_ID = "SESSION_ID";
 
     // relevant for the login activity
     public static final int    NEW_NOTE_REQUEST   = 4;
