@@ -3,7 +3,8 @@ package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 import android.widget.TextView;
 
 public class Customer extends Person {
-    public final static String TAG= "CallTask";
+    public final static String TAG= "Customer";
+
     private String _username;
     private String _password;
     private int _policyNumber;
@@ -21,6 +22,7 @@ public class Customer extends Person {
         _password = password;
         _sessionId = sessionId;
         _policyNumber = policyNumber;
+
    //    _claimList = claimList;
  //    _plateList = plateList;
     }
@@ -133,7 +135,7 @@ public String getUsername() {
 //        return res;
 //    }
 
-/*    @Override
+   @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -157,7 +159,7 @@ public String getUsername() {
         }
         return true;
     }
-*/
+
 
     @Override
     public String toString() {
