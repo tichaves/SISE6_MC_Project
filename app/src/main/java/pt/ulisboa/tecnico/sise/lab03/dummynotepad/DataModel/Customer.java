@@ -8,7 +8,7 @@ public class Customer extends Person {
     private String _password;
     private int _policyNumber;
     private int _sessionId= -1;
-    //  private final List<Claim> _claimList;
+    //private final List<Claim> _claimList;
  //   private final List<ClaimRecord>;
  //   private final List<String> _plateList;
 
@@ -21,10 +21,10 @@ public class Customer extends Person {
         _password = password;
         _sessionId = sessionId;
         _policyNumber = policyNumber;
-//       _claimList = claimList;
-//       _plateList = plateList;
+   //    _claimList = claimList;
+ //    _plateList = plateList;
     }
-/*    public Customer(String username, String password, int policyNumber,
+ /*   public Customer(String username, String password, int policyNumber,
                     Person person, List<ClaimRecord> claimList, List<String> plateList) {
         this(username, password, -1, policyNumber, person, claimList, plateList);
     }
@@ -55,8 +55,10 @@ public class Customer extends Person {
 
     public Customer(int policyNumber, Person person) {
         this(null, null, -1, policyNumber, person, new ArrayList<ClaimRecord>(), new ArrayList<String>());
-     }
-*/
+    }
+
+  */
+
 public String getUsername() {
 
         return _username;
@@ -161,7 +163,7 @@ public String getUsername() {
     public String toString() {
         return super.toString() + ", " +
                 "Username:" + _username + ", " +
-//                "Password:" + _password + ", " +
+                "Password:" + _password + ", " +
                 "Policy Number:" + _policyNumber + ".";
     }
 }
