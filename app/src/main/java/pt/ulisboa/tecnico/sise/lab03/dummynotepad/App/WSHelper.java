@@ -14,6 +14,10 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Person;
+
 public class WSHelper {
     private static final String TAG = "WSHelper";
     private static final String NAMESPACE = "http://pt.ulisboa.tecnico.sise.insure.ws/";
@@ -52,7 +56,7 @@ public class WSHelper {
         int sessionID = Integer.parseInt(makeRequest(METHOD_NAME, username, password));
         return sessionID;
     }
-/*
+
     public static Customer getCustomerInfo(int sessionId) throws Exception {
         final String METHOD_NAME = "getCustomerInfo";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"");     // add "" to convert int to String
@@ -65,8 +69,9 @@ public class WSHelper {
             String address      = jsonRootObject.optString("address");
             String dateOfBirth  = jsonRootObject.getString("dateOfBirth");
             int policyNumber    = Integer.parseInt(jsonRootObject.optString("policyNumber"));
+            String password =  jsonRootObject.getString("password");
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
-            return new Customer(username, sessionId, policyNumber, person) ;  // dummy Customer without username and password, just used for details
+            return new Customer(username, password, sessionId, policyNumber, person) ;  // dummy Customer without username and password, just used for details
         }  catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "getCustomerInfo - JSONResult:" + jsonResult);
@@ -74,7 +79,7 @@ public class WSHelper {
         return null;
     }
 
-    public static ClaimRecord getClaimInfo(int sessionId, int claimId) throws Exception {
+ /*   public static ClaimRecord getClaimInfo(int sessionId, int claimId) throws Exception {
         final String METHOD_NAME = "getClaimInfo";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"", claimId+"");
         try {
@@ -110,7 +115,7 @@ public class WSHelper {
             Log.d(TAG, "listPlates - JSONResult:" + jsonResult);
         }
         return null;
-    }
+    }*/
 
     public static List<ClaimItem> listClaims(int sessionId) throws Exception {
         final String METHOD_NAME = "listClaims";
@@ -131,7 +136,7 @@ public class WSHelper {
         }
         return null;
     }
-
+    /*
     public static List<ClaimMessage> listClaimMessages(int sessionId, int claimId) throws Exception {
         final String METHOD_NAME = "listClaimMessages";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"", claimId+"");
