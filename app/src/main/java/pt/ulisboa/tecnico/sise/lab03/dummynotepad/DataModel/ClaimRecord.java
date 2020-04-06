@@ -20,17 +20,17 @@ public class ClaimRecord {
         this.title = title;
     }
 
-    public String getPlate() { return plate; }
+    public String getPlate() { return this.plate; }
 
     public void setPlate(String plate) { this.plate = plate; }
 
-    public String getDate() { return date; }
+    public String getDate() { return this.date; }
 
     public void setDate(String date) { this.date = date; }
 
     public void setDescription(String description) { this.description = description; }
 
-    public String getDescription() { return description; }
+    public String getDescription() { return this.description; }
 
     @Override
     public String toString() {

@@ -53,11 +53,15 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
         GlobalState context = (GlobalState) getApplicationContext();
         ClaimRecord claim = context.getClaimList().get(index);
 
-        /*// update the UI
-        TextView claimTitle = (TextView) findViewById(R.id.read_note_title);
-        noteTextView.setText(note.getTitle());
-        TextView noteBodyTextView = (TextView) findViewById(R.id.read_note_text);
-        noteBodyTextView.setText(note.getBody());*/
+        // update the UI
+        TextView claimTitle = (TextView) findViewById(R.id.claim_description_title_data);
+        claimTitle.setText(claim.getTitle());
+        TextView claimPlate = (TextView) findViewById(R.id.claim_description_plate_data);
+        claimPlate.setText(claim.getPlate());
+        TextView claimDate = (TextView) findViewById(R.id.claim_description_date_data);
+        claimDate.setText(claim.getDate());
+        TextView claimDesc = (TextView) findViewById(R.id.claim_description_body_data);
+        claimDesc.setText(claim.getDescription());
     }
 }
 
