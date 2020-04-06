@@ -9,10 +9,14 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 
 public class WSMyClaims extends AsyncTask<Void, String, Void> {
     public final static String TAG = "WSMyClaims";
+    private int sessionId;
+
+    public WSMyClaims(int sessionId) {
+        this.sessionId = sessionId;
+    }
 
     @Override
     protected Void doInBackground(Void... voids) {
-
         /*
          * Test method call invocation: listClaims
          */
