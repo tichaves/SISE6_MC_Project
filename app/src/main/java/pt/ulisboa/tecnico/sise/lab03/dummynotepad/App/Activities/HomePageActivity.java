@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Claim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;

@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

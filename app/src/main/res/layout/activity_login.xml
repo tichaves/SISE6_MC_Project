@@ -5,7 +5,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.LoginActivity"
+        tools:context="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.LoginActivity"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:orientation="vertical"

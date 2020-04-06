@@ -10,18 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.HomePageActivity"></activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.LoginActivity">
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.HomePageActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.NewClaimActivity"></activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.ClaimDescriptionActivity"></activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.MyClaimsActivity"></activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.MyProfileActivity"></activity>
-        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities.SettingsActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.NewClaimActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.ClaimDescriptionActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.MyClaimsActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.MyProfileActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.SettingsActivity"></activity>
     </application>
 
 </manifest>
