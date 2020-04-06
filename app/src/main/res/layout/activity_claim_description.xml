@@ -6,86 +6,187 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:contentDescription="@string/insure_logo"
+        app:srcCompat="@drawable/insure_image"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/new_claim_image"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:contentDescription="@string/insure_logo"
+        app:layout_constraintTop_toBottomOf="@+id/login_logo"
+        app:srcCompat="@drawable/pneu"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <TextView
+        android:id="@+id/claim_title_description"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/claim_title_description"
+        android:textColor="#020202"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+        tools:layout_editor_absoluteX="-1dp" />
+
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="641dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/claim_description_menu_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/login_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="81dp"
-            android:contentDescription="@string/insure_logo"
-            app:srcCompat="@drawable/insure_image" />
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/claim_title_description"
+        tools:layout_editor_absoluteX="1dp">
 
         <TextView
-            android:id="@+id/claim_title_description"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="@string/claim_title_description" />
-
-        <EditText
-            android:id="@+id/claim_description_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/claim_description_title"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
             android:ems="10"
-            android:hint="@string/claim_description_id"
-            android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:text="@string/claim_description_id" />
+            android:text="Title:"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
 
-        <EditText
-            android:id="@+id/claim_description_date"
+        <TextView
+            android:id="@+id/claim_description_title_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/claim_description_date"
-            android:inputType="date" />
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <TextView
-            android:id="@+id/claim_dscp_description"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="@string/claim_dscp_description" />
+            android:id="@+id/claim_description_plate"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:gravity="center"
+            android:text="@string/new_claim_plate_input"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/claim_description_plate_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
 
         <TextView
-            android:id="@+id/claim_description_text"
+            android:id="@+id/claim_description_plate_data"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/claim_description_date"
+            app:layout_constraintStart_toStartOf="@+id/claim_description_plate" />
+
+        <TextView
+            android:id="@+id/claim_description_date"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Date:"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/new_claim_date_input"
+            app:layout_constraintStart_toStartOf="@+id/claim_description_plate_data"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
+            tools:layout_editor_absoluteX="-1dp" />
+
+        <TextView
+            android:id="@+id/claim_description_date_data"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/claim_description_date"
+            app:layout_constraintTop_toBottomOf="@+id/new_claim_image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/claim_description_body"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:text="@string/claim_dscp_description"
+            android:gravity="center"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/claim_description_body_data"
             android:layout_width="match_parent"
-            android:layout_height="370dp"
-            android:text="@string/claim_description_text" />
+            android:layout_height="200dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
 
     </LinearLayout>
 
     <Button
         android:id="@+id/claim_description_menu_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="105dp"
+        android:layout_height="52dp"
         android:text="@string/claim_description_menu_btn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/claim_description_back_btn"
-        app:layout_constraintHorizontal_bias="0.581"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/claim_description_back_btn"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.205" />
 
     <Button
         android:id="@+id/claim_description_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="@string/claim_description_back_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.2" />
 
 </android.support.constraint.ConstraintLayout>

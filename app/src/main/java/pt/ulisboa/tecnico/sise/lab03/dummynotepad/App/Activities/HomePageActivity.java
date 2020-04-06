@@ -79,13 +79,14 @@ public class HomePageActivity extends AppCompatActivity {
                 // return an intent containing the title and body of the new note
                 Intent intent = new Intent(HomePageActivity.this, NewClaimActivity.class);
 
-                startActivity(intent);
+                startActivityForResult(intent, InternalProtocol.NEW_CLAIM_REQUEST);
             }
         });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
         switch (requestCode) {
             case InternalProtocol.NEW_CLAIM_REQUEST:
 
