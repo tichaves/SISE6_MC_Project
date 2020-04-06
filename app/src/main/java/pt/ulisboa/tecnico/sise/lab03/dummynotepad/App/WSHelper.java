@@ -14,6 +14,7 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Person;
 
@@ -114,7 +115,7 @@ public class WSHelper {
             Log.d(TAG, "listPlates - JSONResult:" + jsonResult);
         }
         return null;
-    }
+    }*/
 
     public static List<ClaimItem> listClaims(int sessionId) throws Exception {
         final String METHOD_NAME = "listClaims";
@@ -135,7 +136,7 @@ public class WSHelper {
         }
         return null;
     }
-
+    /*
     public static List<ClaimMessage> listClaimMessages(int sessionId, int claimId) throws Exception {
         final String METHOD_NAME = "listClaimMessages";
         String jsonResult = makeRequest(METHOD_NAME, sessionId+"", claimId+"");

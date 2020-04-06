@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 public class WSLogin extends AsyncTask<String, String, Integer> {
-    public final static String TAG = "CallTask";
+    public final static String TAG = "WSLogin";
     /*private TextView _textView;
 
     public WSLogin(TextView textView) {
