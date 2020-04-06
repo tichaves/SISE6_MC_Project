@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSLogin;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
@@ -39,13 +41,18 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }*/
 
-                // return an intent containing the title and body of the new note
-                Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
-                intent.putExtra(InternalProtocol.KEY_USER, user);
-                // write a toast message
-//                Toast.makeText(v.getContext(), "Successful Login", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-                finish();
+                try {
+                    InternalProtocol.SESSIONID = new WSLogin(user, password).execute().get();
+                    // return an intent containing the title and body of the new note
+                    Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                    intent.putExtra(InternalProtocol.KEY_USER, user);
+                    // write a toast message
+                    Toast.makeText(v.getContext(), "Successful Login!", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // write a toast message
+                    Toast.makeText(v.getContext(), "Login falied!", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
