@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
 import android.os.AsyncTask;
 import android.widget.TextView;

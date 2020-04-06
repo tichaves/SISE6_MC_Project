@@ -1,16 +1,12 @@
-package pt.ulisboa.tecnico.sise.lab03.dummynotepad.Activities;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Note;
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class MyProfileActivity  extends AppCompatActivity {
