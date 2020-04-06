@@ -2,57 +2,57 @@ package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 
 public class Person {
 
-    protected String _name;
-    protected int _fiscalNumber;
-    protected String _address;
-    protected String _dateOfBirth;
+    protected String name;
+    protected int fiscalNumber;
+    protected String address;
+    protected String dateOfBirth;
 
     public Person(String name, int fiscalNumber, String address, String dateOfBirth) {
 
-        _name = name;
-        _fiscalNumber = fiscalNumber;
-        _address = address;
-        _dateOfBirth = dateOfBirth;
+        name = name;
+        fiscalNumber = fiscalNumber;
+        address = address;
+        dateOfBirth = dateOfBirth;
     }
 
     public Person(Person p) {
-        _name = p.getName();
-        _fiscalNumber = p.getFiscalNumber();
-        _address = p.getAddress();
-        _dateOfBirth = p.getDateOfBirth();
+        name = p.getName();
+        fiscalNumber = p.getFiscalNumber();
+        address = p.getAddress();
+        dateOfBirth = p.getDateOfBirth();
     }
 
 
     public String getName() {
-            return _name;
+            return name;
         }
 
         public void setName(String name) {
-            this._name = name;
+            this.name = name;
         }
 
         public int getFiscalNumber() {
-            return _fiscalNumber;
+            return fiscalNumber;
         }
 
         public void setFiscalNumber(int fiscalNumber) {
-            this._fiscalNumber = fiscalNumber;
+            this.fiscalNumber = fiscalNumber;
         }
 
         public String getAddress() {
-            return _address;
+            return address;
         }
 
         public void setAddress(String address) {
-            this._address = address;
+            this.address = address;
         }
 
         public String getDateOfBirth() {
-            return _dateOfBirth;
+            return dateOfBirth;
         }
 
         public void setDateOfBirth(String dateOfBirth) {
-            this._dateOfBirth = dateOfBirth;
+            this.dateOfBirth = dateOfBirth;
         }
 
         @Override
@@ -67,17 +67,17 @@ public class Person {
             return false;
         }
         Person other = (Person) obj;
-        if (_fiscalNumber != other._fiscalNumber) {
+        if (fiscalNumber != other.fiscalNumber) {
             return false;
         }
         return true;
         }
 
         public String toString() {
-        return "Customer Name:" + _name + ", " +
-                "Fiscal Number:" + _fiscalNumber + ", " +
-                "Address:" + _address + ", " +
-                "Date of Birth:" + _dateOfBirth + ".";
+        return "Customer Name:" + name + ", " +
+                "Fiscal Number:" + fiscalNumber + ", " +
+                "Address:" + address + ", " +
+                "Date of Birth:" + dateOfBirth + ".";
     }
 }
 

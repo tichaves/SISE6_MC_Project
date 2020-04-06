@@ -34,6 +34,7 @@ public class ClaimRecord {
 
     @Override
     public String toString() {
+
         return this.title;
     }
 }
