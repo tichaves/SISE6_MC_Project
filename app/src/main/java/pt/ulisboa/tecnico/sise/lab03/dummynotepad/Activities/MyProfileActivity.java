@@ -16,10 +16,6 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 public class MyProfileActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - MyProfileActivity";
     private Button buttonMenu;
-    private TextView name;
-    private TextView insure_policy_number;
-    private TextView nif;
-    private TextView birthday;
 
 
     @Override
@@ -39,4 +35,15 @@ public class MyProfileActivity  extends AppCompatActivity {
         });
 
     }
+// exemplo do prof para ir buscar as coisas
+
+/*    @Override
+    protected void onStart() {
+        super.onStart();
+        resultView.setText("");
+        // create separate AsynkTasks that behave differently for each request in different app
+        new WSCallTask(resultView).execute();
+    }
+
+ */
 }
