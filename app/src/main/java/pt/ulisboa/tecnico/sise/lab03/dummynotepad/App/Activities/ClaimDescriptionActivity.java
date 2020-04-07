@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
@@ -51,17 +52,18 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
 
         // obtain a reference to the note's data structure
         GlobalState context = (GlobalState) getApplicationContext();
-        ClaimRecord claim = context.getClaimList().get(index);
+        ClaimItem claim = context.getClaimList().get(index);
+        //ClaimRecord claim = (ClaimRecord) context.getClaimList().get(index);
 
         // update the UI
         TextView claimTitle = (TextView) findViewById(R.id.claim_description_title_data);
         claimTitle.setText(claim.getTitle());
-        TextView claimPlate = (TextView) findViewById(R.id.claim_description_plate_data);
-        claimPlate.setText(claim.getPlate());
-        TextView claimDate = (TextView) findViewById(R.id.claim_description_date_data);
-        claimDate.setText(claim.getDate());
-        TextView claimDesc = (TextView) findViewById(R.id.claim_description_body_data);
-        claimDesc.setText(claim.getDescription());
+//        TextView claimPlate = (TextView) findViewById(R.id.claim_description_plate_data);
+//        claimPlate.setText(claim.getPlate());
+//        TextView claimDate = (TextView) findViewById(R.id.claim_description_date_data);
+//        claimDate.setText(claim.getOccurrenceDate());
+//        TextView claimDesc = (TextView) findViewById(R.id.claim_description_body_data);
+//        claimDesc.setText(claim.getDescription());
     }
 }
 

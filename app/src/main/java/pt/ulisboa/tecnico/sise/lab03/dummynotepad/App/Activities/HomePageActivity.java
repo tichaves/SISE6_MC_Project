@@ -37,6 +37,7 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        Log.d(LOG_TAG, "HomePage Activity Created.");
 
         globalState = (GlobalState) getApplicationContext();
 
@@ -55,6 +56,8 @@ public class HomePageActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        globalState.setListClaim(this.claimList);
 
         buttonMyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

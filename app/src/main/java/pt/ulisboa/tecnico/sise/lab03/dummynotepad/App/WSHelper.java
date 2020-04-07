@@ -92,7 +92,7 @@ public class WSHelper {
             String occurrenceDate   = jsonRootObject.optString("occurrenceDate");
             String description      = jsonRootObject.optString("description");
             String status           = jsonRootObject.optString("status");
-            return new ClaimRecord(claimTitle, plate, occurrenceDate, description);
+            return new ClaimRecord(claimIdResp, claimTitle, submissionDate, occurrenceDate, plate, description, status);
 
         }  catch (JSONException e) {
             //e.printStackTrace();
