@@ -41,7 +41,7 @@ public class GlobalState extends Application {
 
     }
     public void setCustomerLicensePlates(List<String> plates) {
-        this.customer.setPlateList(plates);
+        //this.customer.setPlateList(plates);
     }
 
     public void writeCustomerInCache(Customer c) {

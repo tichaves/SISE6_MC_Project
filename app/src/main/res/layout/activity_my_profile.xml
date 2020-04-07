@@ -52,7 +52,7 @@
             android:text="Insure Policy:" />
 
         <TextView
-            android:id="@+id/myprofile_act_insure_policy_input"
+            android:id="@+id/myprofile_act_insure_policy_output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -63,6 +63,7 @@
             android:text="Name:" />
 
         <TextView
+            android:id="@+id/myprofile_act_name_output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -73,7 +74,7 @@
             android:text="NIF:" />
 
         <TextView
-            android:id="@+id/myprofile_act_nif_input"
+            android:id="@+id/myprofile_act_nif_output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -84,7 +85,7 @@
             android:text="Adress:" />
 
         <TextView
-            android:id="@+id/myprofile_act_adress_input"
+            android:id="@+id/myprofile_act_adress_output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -95,7 +96,7 @@
             android:text="Brithday" />
 
         <TextView
-            android:id="@+id/myprofile_act_birth_input"
+            android:id="@+id/myprofile_act_birth_output"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -9,9 +9,9 @@ public class Person {
 
     public Person(String name, int fiscalNumber, String address, String dateOfBirth) {
 
-        name = name;
-        fiscalNumber = fiscalNumber;
-        address = address;
+        this.name = name;
+        this.fiscalNumber = fiscalNumber;
+        this.address = address;
         dateOfBirth = dateOfBirth;
     }
 
