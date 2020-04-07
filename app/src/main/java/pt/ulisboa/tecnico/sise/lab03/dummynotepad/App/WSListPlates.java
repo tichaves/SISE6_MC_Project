@@ -11,6 +11,7 @@ import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 
+
 public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
     public final static String TAG = "ListPlates";
 
@@ -19,7 +20,7 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
 
     public WSListPlates(Spinner spinner, Context context) {
         this.spinner = spinner;
-        this.gs = (GlobalState)context.getApplicationContext();
+        this.gs = (GlobalState) context.getApplicationContext();
 
     }
 
@@ -32,7 +33,7 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
         } catch (Exception e) {
             try {
                 result = gs.getCustomer().getPlateList();
-            }catch (NullPointerException el) {
+            } catch (NullPointerException el) {
                 Log.d(TAG, el.toString());
 
             }
@@ -41,7 +42,9 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
         return result;
 
     }
+}
 
+  /*  //improvement
     @Override
     protected void onPostExecute(List<String> result) {
         Boolean isLoadSuccessful = result != null && result.size() != 0;
@@ -70,5 +73,6 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
 
 
     }
+*/
 
-}
+

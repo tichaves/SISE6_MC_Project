@@ -19,10 +19,6 @@ public class GlobalState extends Application {
     private Customer customer;
     private List<ClaimItem> claimList;
 
-    public GlobalState(Customer customer) {
-        this.customer = customer;
-    }
-
     public void setListClaim(List<ClaimItem> claimList) {
         this.claimList = claimList;
     }
@@ -47,9 +43,9 @@ public class GlobalState extends Application {
         //this.customer.setPlateList(plates);
     }
 
-    public void writeCustomerInCache(Customer c) {
-        writeObjectInFile(c, InternalProtocol.CACHE_CUSTOMER);
-    }
+  //  public void writeCustomerInCache(Customer c) {
+       // writeObjectInFile(c, InternalProtocol.CACHE_CUSTOMER);
+   // }
     public void writeObjectInFile(Object o, String filename) {
 
         try {
