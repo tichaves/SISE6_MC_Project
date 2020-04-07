@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/login_logo"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_width="419dp"
+            android:layout_height="117dp"
             android:contentDescription="logo image "
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/insure_image" />

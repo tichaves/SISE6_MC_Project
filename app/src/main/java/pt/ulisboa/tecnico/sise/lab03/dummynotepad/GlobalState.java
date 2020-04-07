@@ -19,9 +19,6 @@ public class GlobalState extends Application {
     private Customer customer;
     private List<ClaimItem> claimList;
 
-    public GlobalState(Customer customer) {
-        this.customer = customer;
-    }
 
     public void setListClaim(List<ClaimItem> claimList) {
         this.claimList = claimList;
@@ -43,11 +40,15 @@ public class GlobalState extends Application {
         return sessionId;
 
     }
+
     public void setCustomerLicensePlates(List<String> plates) {
         //this.customer.setPlateList(plates);
     }
 
-    public void writeCustomerInCache(Customer c) {
+// improvment
+
+
+ /*   public void writeCustomerInCache(Customer c) {
         writeObjectInFile(c, InternalProtocol.CACHE_CUSTOMER);
     }
     public void writeObjectInFile(Object o, String filename) {
@@ -94,6 +95,8 @@ public class GlobalState extends Application {
         } catch (Exception e) {
             // e.printStackTrace();
             Log.d("DESTROY_CACHE_FILE", filename + " does not exist");
-        }
+       }
+       }
+*/
     }
-}
+
