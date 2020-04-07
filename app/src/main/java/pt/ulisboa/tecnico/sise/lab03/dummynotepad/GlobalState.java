@@ -17,8 +17,11 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 public class GlobalState extends Application {
     private int sessionId;
     private Customer customer;
-
     private List<ClaimItem> claimList;
+
+    public GlobalState(Customer customer) {
+        this.customer = customer;
+    }
 
     public void setListClaim(List<ClaimItem> claimList) {
         this.claimList = claimList;
