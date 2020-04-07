@@ -38,7 +38,35 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
             }
 
         }
-        return null;
+        return result;
+
+    }
+
+    @Override
+    protected void onPostExecute(List<String> result) {
+        Boolean isLoadSuccessful = result != null && result.size() != 0;
+        Log.d(TAG,"List Plates Load Successful => " + isLoadSuccessful);
+
+        if (isLoadSuccessful) {
+            if (spinner != null) {
+                ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(gs, android.R.layout.simple_spinner_dropdown_item, result);
+                spinner.setAdapter(spinnerAdapter);
+                Log.d(TAG,"List Plates loaded to spinner");
+            }
+
+            gs.setCustomerLicensePlates(result);
+            gs.writeCustomerInCache(gs.getCustomer());
+
+        } else {
+            String toastMsg = "Server Error and Plates not stored in cache!\nPlease try again later!";
+
+            Toast.makeText(gs.getApplicationContext(),
+                    toastMsg,
+                    Toast.LENGTH_LONG)
+                    .show();
+
+            Log.d(TAG,toastMsg);
+        }
 
 
     }
