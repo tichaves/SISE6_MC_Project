@@ -22,7 +22,7 @@ public class Customer extends Person {
         _sessionId = sessionId;
         _policyNumber = policyNumber;
 //       _claimList = claimList;
-        _plateList = plateList;
+        this._plateList = plateList;
     }
 /*    public Customer(String username, String password, int policyNumber,
                     Person person, List<ClaimRecord> claimList, List<String> plateList) {

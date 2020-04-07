@@ -72,7 +72,7 @@ public class WSHelper {
             int policyNumber    = Integer.parseInt(jsonRootObject.optString("policyNumber"));
             String password =  jsonRootObject.getString("password");
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
-            return new Customer(username, password, sessionId, policyNumber, person) ;  // dummy Customer without username and password, just used for details
+            return new Customer(username, password, sessionId, policyNumber, person, listPlates(sessionId)) ;  // dummy Customer without username and password, just used for details
         }  catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "getCustomerInfo - JSONResult:" + jsonResult);
@@ -92,7 +92,8 @@ public class WSHelper {
             String occurrenceDate   = jsonRootObject.optString("occurrenceDate");
             String description      = jsonRootObject.optString("description");
             String status           = jsonRootObject.optString("status");
-            return new ClaimRecord(claimIdResp, claimTitle, submissionDate, occurrenceDate, plate, description, status);
+            return new ClaimRecord(claimTitle, plate, occurrenceDate, description);
+
         }  catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "getClaimInfo - JSONResult:" + jsonResult);

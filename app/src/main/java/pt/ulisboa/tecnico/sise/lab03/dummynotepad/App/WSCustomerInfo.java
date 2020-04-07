@@ -8,7 +8,7 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 
 public class WSCustomerInfo extends AsyncTask<String, String, Void> {
-    public final static String TAG = "CustomerInfo";
+    public final static String TAG = "WSCustomerInfo";
 
     private TextView _customerName;
     private TextView _fiscalNumber;
