@@ -9,7 +9,12 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSMyClaims;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSNewClaim;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
@@ -23,8 +28,9 @@ public class HomePageActivity extends AppCompatActivity {
     private Button buttonNewClaim;
     private Button buttonHelp;
 
-    private ArrayList<ClaimRecord> claimList;
+    private List<ClaimItem> claimList;
     private GlobalState globalState;
+    private int sessionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,16 @@ public class HomePageActivity extends AppCompatActivity {
         buttonSettings  = (Button) findViewById(R.id.home_page_settings_btn);
         buttonNewClaim  = (Button)  findViewById(R.id.home_page_new_claim_btn);
         buttonHelp      = (Button)  findViewById(R.id.home_page_help_btn);
+
+        this.sessionId = globalState.getSessionId();
+
+        try {
+            this.claimList = new WSMyClaims(this.sessionId).execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         buttonMyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -99,10 +115,20 @@ public class HomePageActivity extends AppCompatActivity {
                     String claimDescription = data.getStringExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION);
 
                     // update the domain data structures
+                    try {
+                        boolean success = new WSNewClaim(this.sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
+                        if (success){
+                            /*this.claimList = globalState.getClaimList();
+                            this.claimList.add(new ClaimRecord(claimTitle, claimPlate, claimDate, claimDescription));
+                            globalState.setListClaim(this.claimList);*/
+                        }
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                    this.claimList = globalState.getClaimList();
-                    this.claimList.add(new ClaimRecord(claimTitle, claimPlate, claimDate, claimDescription));
-                    globalState.setListClaim(this.claimList);
+
 
                     Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
 /*

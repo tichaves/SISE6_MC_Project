@@ -9,23 +9,22 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 
 public class GlobalState extends Application {
     private int sessionId;
     private Customer customer;
 
-    private ArrayList<ClaimRecord> claimList = new ArrayList<ClaimRecord>();
+    private List<ClaimItem> claimList;
 
-    public void setListClaim(ArrayList<ClaimRecord> claimList) {
+    public void setListClaim(List<ClaimItem> claimList) {
         this.claimList = claimList;
     }
 
-    public ArrayList<ClaimRecord> getClaimList() {
+    public List<ClaimItem> getClaimList() {
         return this.claimList;
     }
 

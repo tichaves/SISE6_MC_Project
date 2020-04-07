@@ -15,10 +15,13 @@ public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
     private Integer sessionId;
     private Boolean exceptionCaught = false;
 
-    public WSNewClaim (Context context, Integer sessionId) {
+    public WSNewClaim (Integer sessionId, Context context) {
         this.context = context;
         this.sessionId = sessionId;
 
+    }
+
+    public WSNewClaim(int sessionId, String claimTitle, String claimPlate, String claimDate, String claimDescription) {
     }
 
     @Override

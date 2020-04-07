@@ -22,15 +22,10 @@ public class MyClaimsActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - My Claims";
     private ListView listView;
 
-    private GlobalState globalState;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_claim_list);
-
-        globalState = (GlobalState) getApplicationContext();
-//        Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
 
         // place the note list in the application domain
         GlobalState globalState = (GlobalState) getApplicationContext();

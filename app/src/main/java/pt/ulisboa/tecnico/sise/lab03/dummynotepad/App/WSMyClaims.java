@@ -7,7 +7,7 @@ import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 
-public class WSMyClaims extends AsyncTask<Integer, String, Void> {
+public class WSMyClaims extends AsyncTask<Integer, String, List<ClaimItem>> {
     public final static String TAG = "WSMyClaims";
     private int sessionId;
 
@@ -16,7 +16,7 @@ public class WSMyClaims extends AsyncTask<Integer, String, Void> {
     }
 
     @Override
-    protected Void doInBackground(Integer... integers) {
+    protected List<ClaimItem> doInBackground(Integer... integers) {
         /*
          * Test method call invocation: listClaims
          */
@@ -32,7 +32,7 @@ public class WSMyClaims extends AsyncTask<Integer, String, Void> {
             } else {
                 Log.d(TAG, "List claim item result => null.");
             }
-            publishProgress("ok.\n");
+            return claimItemList;
         } catch (Exception e) {
             Log.d(TAG, e.toString());
             publishProgress("failed.\n");
