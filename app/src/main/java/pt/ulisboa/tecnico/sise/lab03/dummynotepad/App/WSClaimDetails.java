@@ -5,12 +5,12 @@ import android.util.Log;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 
-public class WSClaimInfo extends AsyncTask<Integer, String, Void> {
+public class WSClaimDetails extends AsyncTask<Integer, String, Void> {
     public final static String TAG = "WSClaimInfo";
     private int sessionId;
     private int claimId;
 
-    public WSClaimInfo(int sessionId, int claimId) {
+    public WSClaimDetails(int sessionId, int claimId) {
         this.sessionId = sessionId;
         this.claimId = claimId;
     }
