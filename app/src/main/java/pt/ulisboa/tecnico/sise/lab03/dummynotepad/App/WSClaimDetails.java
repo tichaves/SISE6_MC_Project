@@ -5,7 +5,7 @@ import android.util.Log;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 
-public class WSClaimDetails extends AsyncTask<Integer, String, Void> {
+public class WSClaimDetails extends AsyncTask<Integer, String, ClaimRecord> {
     public final static String TAG = "WSClaimInfo";
     private int sessionId;
     private int claimId;
@@ -16,17 +16,16 @@ public class WSClaimDetails extends AsyncTask<Integer, String, Void> {
     }
 
     @Override
-    protected Void doInBackground(Integer... integers) {
+    protected ClaimRecord doInBackground(Integer... integers) {
 
         /*
-         * Test method call invocation: getClaimInfo
+         * method call invocation: getClaimInfo
          */
-        publishProgress("Testing method call getClaimInfo...");
         try {
-            //int claimId = 1;
             ClaimRecord claimRecord = WSHelper.getClaimInfo(sessionId, claimId);
             if (claimRecord != null) {
                 Log.d(TAG, "Get Claim Info result claimId " + claimId + " => " + claimRecord.toString());
+                return claimRecord;
             } else {
                 Log.d(TAG, "Get Claim Info result claimId " + claimId + " => null.");
             }
