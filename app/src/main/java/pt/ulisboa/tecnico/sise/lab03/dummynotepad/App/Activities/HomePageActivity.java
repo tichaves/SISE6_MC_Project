@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,23 +119,22 @@ public class HomePageActivity extends AppCompatActivity {
                     try {
                         boolean success = new WSNewClaim(this.sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
                         if (success){
-                            /*this.claimList = globalState.getClaimList();
-                            this.claimList.add(new ClaimRecord(claimTitle, claimPlate, claimDate, claimDescription));
-                            globalState.setListClaim(this.claimList);*/
+                            Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
+                            this.claimList = new WSMyClaims(sessionId).execute().get();
+                            globalState.setListClaim(this.claimList);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Claim not submitted!", Toast.LENGTH_SHORT).show();
                         }
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
-
-
-                    Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
+                Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
 /*
-                    // refresh the list on screen
-                    _listView.setAdapter(new ArrayAdapter<>(this,
-                            android.R.layout.simple_list_item_1, android.R.id.text1, _noteList));*/
+                // refresh the list on screen
+                _listView.setAdapter(new ArrayAdapter<>(this,
+                        android.R.layout.simple_list_item_1, android.R.id.text1, _noteList));*/
 
                 } else if (resultCode == Activity.RESULT_CANCELED) {
                     Log.d(InternalProtocol.LOG, "Cancel pressed.");

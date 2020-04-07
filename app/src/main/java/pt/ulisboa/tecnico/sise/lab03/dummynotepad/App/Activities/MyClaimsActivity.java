@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
@@ -29,11 +31,11 @@ public class MyClaimsActivity  extends AppCompatActivity {
 
         // place the note list in the application domain
         GlobalState globalState = (GlobalState) getApplicationContext();
-        ArrayList<ClaimRecord> claimList = globalState.getClaimList();
+        List<ClaimItem> claimList = globalState.getClaimList();
 
         // assign adapter to list view
         this.listView = (ListView) findViewById(R.id.my_claims_list_list);
-        ArrayAdapter<ClaimRecord> adapter = new ArrayAdapter<>(this,
+        ArrayAdapter<ClaimItem> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, claimList);
         this.listView.setAdapter(adapter);
 
