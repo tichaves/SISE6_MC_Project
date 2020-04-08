@@ -37,7 +37,6 @@ public class WSClaimDetails extends AsyncTask<Integer, String, ClaimRecord> {
             }
             publishProgress("ok.\n");
 
-
             String claimRecordJson = JsonCodec.encodeClaimRecord(claimRecord);
             Log.d(TAG, "customerInfo: customerJson - " + claimRecordJson);
 

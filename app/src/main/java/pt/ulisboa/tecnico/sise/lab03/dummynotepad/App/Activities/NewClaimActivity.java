@@ -41,7 +41,7 @@ public class NewClaimActivity  extends AppCompatActivity {
         _sessionId = _globalState.get_sessionId();
 
         try {
-            _plateList = new WSListPlates(_sessionId).execute().get();
+            _plateList = new WSListPlates(_sessionId, NewClaimActivity.this).execute().get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -55,7 +55,7 @@ public class NewClaimActivity  extends AppCompatActivity {
         _buttonSubmit  = (Button)  findViewById(R.id.new_claim_btn_submit);
         _buttonCancel  = (Button)  findViewById(R.id.new_claim_btn_cancel);
         _editTextTitle = (EditText)findViewById(R.id.new_claim_title_input);
-        _spinnerPlate = (Spinner) findViewById(R.id.new_claim_plate_input);
+        _spinnerPlate  = (Spinner) findViewById(R.id.new_claim_plate_input);
         _editTextDate  = (EditText)findViewById(R.id.new_claim_date_input);
         _editTextDesc  = (EditText)findViewById(R.id.new_claim_description_input);
 

@@ -5,19 +5,28 @@ import android.util.Log;
 
 import java.util.List;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.NewClaimActivity;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
+
 public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
     public final static String TAG = "InSureApp - ListPlates";
     private int _sessionId;
+    private NewClaimActivity _newClaimActivity;
 
-    public WSListPlates(int sessionId) { _sessionId = sessionId; }
+    public WSListPlates(int sessionId, NewClaimActivity newClaimActivity) {
+        _sessionId = sessionId;
+        _newClaimActivity = newClaimActivity;
+    }
 
     @Override
     protected List<String> doInBackground(Integer... params) {
+        String platesFileName = "plates.json";
+        List<String> plateList;
         /*
          * Test method call invocation: listPlates
          */
         try {
-            List<String> plateList = WSHelper.listPlates(_sessionId);
+            plateList = WSHelper.listPlates(_sessionId);
             if (plateList != null) {
                 String m = plateList.size() > 0 ? "" : "empty array";
                 for (String plate : plateList) {
@@ -27,11 +36,25 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
             } else {
                 Log.d(TAG, "List plates result => null.");
             }
-            return plateList;
+
+            String platesJson = JsonCodec.encodePlateList(plateList);
+            Log.d(TAG, "customerInfo: customerJson - " + platesJson);
+
+            JsonFileManager.jsonWriteToFile(_newClaimActivity.getApplicationContext(), platesFileName, platesJson);
+            Log.d(TAG, "customerInfo: written to - " + platesFileName);
         } catch (Exception e) {
             Log.d(TAG, e.toString());
-            return null;
+
+            String plateListJson = JsonFileManager.jsonReadFromFile(_newClaimActivity.getApplicationContext(), platesFileName);
+            Log.d(TAG, "customerInfo: read from - " + platesFileName);
+
+            List<String> jsonPlateList = JsonCodec.decodePlateList(plateListJson);
+
+            plateList = jsonPlateList;
+            Log.d(TAG, "customerInfo: jsonCustomer - " + jsonPlateList);
         }
+
+        return plateList;
     }
 
     /*private Spinner spinner;
