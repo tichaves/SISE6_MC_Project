@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.sise.autoinsure.app;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
 import android.content.Context;
 import android.util.Log;

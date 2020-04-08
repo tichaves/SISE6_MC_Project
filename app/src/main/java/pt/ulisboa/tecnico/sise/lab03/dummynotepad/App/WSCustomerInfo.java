@@ -1,6 +1,7 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -11,8 +12,7 @@ public class WSCustomerInfo extends AsyncTask<String, String, Customer> {
     public final static String TAG = "WSCustomerInfo";
 
     private int _sessionId;
-
-    private GlobalState globalState;
+    private GlobalState _globalState;
 
     public WSCustomerInfo(int sessionId) {
         _sessionId = sessionId;
@@ -40,10 +40,10 @@ public class WSCustomerInfo extends AsyncTask<String, String, Customer> {
             String customerJson = JsonCodec.encodeCustomerInfo(customer);
             Log.d(TAG, "customerInfo: customerJson - " + customerJson);
 
-            JsonFileManager.jsonWriteToFile(_textView.getContext(), customerFileName, customerJson);
+            JsonFileManager.jsonWriteToFile(_globalState.getApplicationContext(), customerFileName, customerJson);
             Log.d(TAG, "customerInfo: written to - " + customerFileName);
 
-            customerJson = JsonFileManager.jsonReadFromFile(_textView.getContext(), customerFileName);
+            customerJson = JsonFileManager.jsonReadFromFile(_globalState.getApplicationContext(), customerFileName);
             Log.d(TAG, "customerInfo: read from - " + customerFileName);
 
             Customer jsonCustomer = JsonCodec.decodeCustomerInfo(customerJson);

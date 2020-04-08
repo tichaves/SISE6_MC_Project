@@ -1,4 +1,4 @@
-package pt.ulisboa.tecnico.sise.autoinsure.app;
+package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
 import android.util.Log;
 
@@ -9,10 +9,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import pt.ulisboa.tecnico.sise.autoinsure.datamodel.ClaimItem;
-import pt.ulisboa.tecnico.sise.autoinsure.datamodel.ClaimRecord;
-import pt.ulisboa.tecnico.sise.autoinsure.datamodel.Customer;
-import pt.ulisboa.tecnico.sise.autoinsure.datamodel.Person;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Person;
 
 public class JsonCodec {
 
