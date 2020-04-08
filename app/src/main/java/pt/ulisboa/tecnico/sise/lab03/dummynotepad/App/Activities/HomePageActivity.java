@@ -162,7 +162,6 @@ public class HomePageActivity extends AppCompatActivity {
             default:
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
-        Log.d(LOG_TAG, "No Claims: " + _claimList.size());
     }
 
 }
