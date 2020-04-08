@@ -16,7 +16,7 @@ public class InternalProtocol {
     public static final String KEY_NEW_CLAIM_DESCRIPTION  = "CLAIM_DESC";
 
     //relevant for privacy activity request
-    public static final int MENU_POLICY_REQUEST =4;
+    public static final int MENU_REQUEST =4;
 
 
     // relevant for the read note activity

@@ -1,7 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,10 +10,8 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 import static pt.ulisboa.tecnico.sise.lab03.dummynotepad.R.layout.activity_terms_conditions;
 
-public class TermsPolicyActivity extends AppCompatActivity {
+public class TermsAndConditionsActivity extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - TermsPolicyActivity";
-
-    private Button _buttonMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +20,7 @@ public class TermsPolicyActivity extends AppCompatActivity {
 
 
         // set up the listener of the back button
-        final Button buttonBack = (Button) findViewById(R.id.terms_back_butn);
+        final Button buttonBack = (Button) findViewById(R.id.terms_conditions_back_butn);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -32,8 +29,9 @@ public class TermsPolicyActivity extends AppCompatActivity {
             }
 
         });
+
         // set up the listener of the done button
-        final Button buttonMenu = (Button) findViewById(R.id.terms_menu_butn);
+        final Button buttonMenu = (Button) findViewById(R.id.terms_conditions_menu_butn);
 
         buttonMenu.setOnClickListener(new View.OnClickListener() {
 

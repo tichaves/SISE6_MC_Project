@@ -27,7 +27,7 @@ public class SettingsActivity  extends AppCompatActivity {
 
         _buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
         _buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
-        _buttonTermsAndConditions = (Button) findViewById(R.id.terms_support_button);
+        _buttonTermsAndConditions = (Button) findViewById(R.id.terms_condition_button);
         _buttonPrivacyPolicy = (Button) findViewById(R.id.privacy_policy_btn);
         _buttonTechnicalSupport = (Button) findViewById(R.id.tecnical_support_btn);
 
@@ -50,8 +50,8 @@ public class SettingsActivity  extends AppCompatActivity {
         _buttonTermsAndConditions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, TermsPolicyActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(SettingsActivity.this, TermsAndConditionsActivity.class);
+                startActivityForResult(intent, InternalProtocol.MENU_REQUEST);
             }
 
         });
@@ -60,7 +60,7 @@ public class SettingsActivity  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, TecnicalSupportActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,InternalProtocol.MENU_REQUEST);
             }
         });
 
@@ -68,7 +68,7 @@ public class SettingsActivity  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, PrivacyPolicyActivity.class);
-                startActivityForResult(intent, InternalProtocol.MENU_POLICY_REQUEST);
+                startActivityForResult(intent, InternalProtocol.MENU_REQUEST);
             }
         });
 
@@ -77,7 +77,7 @@ public class SettingsActivity  extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case InternalProtocol.MENU_POLICY_REQUEST:
+            case InternalProtocol.MENU_REQUEST:
                 if (resultCode == Activity.RESULT_CANCELED) {
                     setResult(Activity.RESULT_OK);
                     finish();

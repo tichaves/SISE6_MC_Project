@@ -44,10 +44,10 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/terms_support_button"
+            android:id="@+id/terms_condition_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Terms and Support" />
+            android:text="Terms and Conditions" />
 
         <Button
             android:id="@+id/privacy_policy_btn"

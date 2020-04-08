@@ -48,7 +48,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/terms_menu_butn"
+                android:id="@+id/terms_conditions_back_butn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
 
 
             <Button
-                android:id="@+id/terms_back_butn"
+                android:id="@+id/terms_conditions_menu_butn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
