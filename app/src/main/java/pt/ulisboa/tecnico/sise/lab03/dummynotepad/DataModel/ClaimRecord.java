@@ -1,8 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClaimRecord extends ClaimItem implements Serializable {
     private static final long serialVersionUID = 8410169428857128982L;
@@ -11,24 +9,18 @@ public class ClaimRecord extends ClaimItem implements Serializable {
     private final String _plate;
     private final String _description;
     private String _status;
-    //    private final List<ClaimMessage> _claimMessageList;
     public static final String STATUS_PENDING 	= "pending";	//could be done with enum watching for exceptions
     public static final String STATUS_ACCEPTED 	= "accepted";	//could be done with enum watching for exceptions
     public static final String STATUS_DENIED 	= "denied";		//could be done with enum watching for exceptions
 
     public ClaimRecord(int claimId, String claimTitle, String submissionDate, String occurrenceDate, String plate,
-                       String description, String status, List<ClaimMessage> msgList) {
+                       String description, String status) {
         super(claimId, claimTitle);
         _submissionDate = submissionDate;
         _occurrenceDate = occurrenceDate;
         _plate = plate;
         _description = description;
         _status = status;
-//        _claimMessageList = msgList;
-    }
-
-    public ClaimRecord(int claimId, String claimTitle, String submissionDate, String occurrenceDate, String plate, String description, String status) {
-        this(claimId, claimTitle, submissionDate, occurrenceDate, plate, description, status, new ArrayList<ClaimMessage>());
     }
 
     public String getSubmissionDate() {
@@ -59,22 +51,6 @@ public class ClaimRecord extends ClaimItem implements Serializable {
         return false;
     }
 
-//    public List<ClaimMessage> getClaimMessageList() {
-//        return _claimMessageList;
-//    }
-//
-//    public boolean addClaimMessage(ClaimMessage claimMessage) {
-//        return _claimMessageList.add(claimMessage);
-//    }
-//
-//    public boolean removeClaimMessage(ClaimMessage claimMessage) {
-//        boolean res = false;
-//        while(_claimMessageList.contains(claimMessage)) {
-//            res =_claimMessageList.remove(claimMessage);
-//        }
-//        return res;
-//    }
-
     @Override
     public String toString() {
         return  super.toString() + ", " +
@@ -82,7 +58,6 @@ public class ClaimRecord extends ClaimItem implements Serializable {
                 "Occurrence Date: " + _occurrenceDate + ", " +
                 "Number Plate: " + _plate + ", " +
                 "Description: " + _description + ", " +
-//                "Messages: " + _claimMessageList + ", " +
                 "Status: " + _status + ".";
     }
 }
