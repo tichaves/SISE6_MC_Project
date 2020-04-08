@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.HomePageActivity;
 
-public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
+public class WSNewClaim extends AsyncTask<String, String, Boolean> {
     public final static String TAG = "ListPlates";
-    private Integer _sessionId;
+    private int _sessionId;
     private String _claimTitle;
     private String _claimPlate;
     private String _claimDate;
@@ -28,15 +28,15 @@ public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
         _sessionId = sessionId;
         _claimTitle = claimTitle;
         _claimPlate = claimPlate;
-       _claimDate = claimDate;
+        _claimDate = claimDate;
         _claimDescription = claimDescription;
     }
 
     @Override
-    protected Boolean doInBackground(String... params) {
+    protected Boolean doInBackground(String... strings) {
         try {
-            Log.d(TAG,"Claim details: " + params[0] + ", " + params[1] + ", " + params[2]);
-            boolean r = WSHelper.submitNewClaim(_sessionId, params[0], params[1], params[2], params[3]);
+            Log.d(TAG,"Claim details: " + _claimTitle + ", " + _claimDate + ", " + _claimPlate);
+            boolean r = WSHelper.submitNewClaim(_sessionId, _claimTitle, _claimDate, _claimPlate, _claimDescription);
 
             Log.d(TAG, "Submit new claim => " + r);
             return r;

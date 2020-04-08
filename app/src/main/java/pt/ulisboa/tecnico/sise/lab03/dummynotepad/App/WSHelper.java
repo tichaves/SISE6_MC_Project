@@ -73,9 +73,7 @@ public class WSHelper {
             //String password =  jsonRootObject.getString("password");
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
 
-            //return new Customer(username, sessionId, policyNumber, person);
-            return new Customer(username, sessionId, policyNumber, person);
-            //return new Customer(username, null, policyNumber, sessionId, person, listClaims(sessionId), listPlates(sessionId));  // dummy Customer without username and password, just used for details
+            return new Customer(username, null, sessionId, policyNumber, person, listPlates(sessionId));  // dummy Customer without username and password, just used for details
         }  catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "getCustomerInfo - JSONResult:" + jsonResult);
