@@ -31,21 +31,18 @@ public class GlobalState extends Application {
         _sessionId = id;
     }
 
-    public Customer get_Customer() {
-        return _customer;
-    }
-
     public int get_sessionId() {
         return _sessionId;
     }
 
-    public void setCustomerLicensePlates(List<String> plates) {
-        //this.customer.setPlateList(plates);
-    }
+//    public void setCustomerLicensePlates(List<String> plates) {
+//        //this.customer.setPlateList(plates);
+//    }
 
   //  public void writeCustomerInCache(Customer c) {
        // writeObjectInFile(c, InternalProtocol.CACHE_CUSTOMER);
    // }
+
     public void writeObjectInFile(Object o, String filename) {
 
         try {

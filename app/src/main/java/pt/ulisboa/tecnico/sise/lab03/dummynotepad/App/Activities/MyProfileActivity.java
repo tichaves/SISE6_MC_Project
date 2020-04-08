@@ -1,11 +1,12 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.concurrent.ExecutionException;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSCustomerInfo;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
@@ -15,13 +16,13 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 public class MyProfileActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - MyProfileActivity";
 
-    private Button buttonMenu;
-    private TextView insurePolicyOutput;
-    private TextView clientNameOutput;
-    private TextView nifOutput;
-    private TextView adressOutput;
-    private TextView dateOfBirthOutput;
-    private int sessionId;
+    private Button _buttonMenu;
+    private TextView _insurePolicyOutput;
+    private TextView _clientNameOutput;
+    private TextView _nifOutput;
+    private TextView _addressOutput;
+    private TextView _dateOfBirthOutput;
+    private int _sessionId;
 
 
 
@@ -30,41 +31,41 @@ public class MyProfileActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-        final GlobalState globalState = (GlobalState) getApplicationContext();
+        GlobalState globalState = (GlobalState) getApplicationContext();
 
-        buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
-        insurePolicyOutput = (TextView)findViewById(R.id.myprofile_act_insure_policy_output);
-        clientNameOutput= (TextView)findViewById(R.id.myprofile_act_name_output);
-        nifOutput= (TextView)findViewById(R.id.myprofile_act_nif_output);
-        adressOutput= (TextView)findViewById(R.id.myprofile_act_adress_output);
-        dateOfBirthOutput= (TextView)findViewById(R.id.myprofile_act_birth_output);
-        this.sessionId = globalState.get_sessionId();
+        _buttonMenu         = (Button)   findViewById(R.id.settings_act_btn_menu);
+        _insurePolicyOutput = (TextView) findViewById(R.id.myprofile_act_insure_policy_output);
+        _clientNameOutput   = (TextView) findViewById(R.id.myprofile_act_name_output);
+        _nifOutput          = (TextView) findViewById(R.id.myprofile_act_nif_output);
+        _addressOutput      = (TextView) findViewById(R.id.myprofile_act_adress_output);
+        _dateOfBirthOutput  = (TextView) findViewById(R.id.myprofile_act_birth_output);
 
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
+        _sessionId = globalState.get_sessionId();
+
+        _buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyProfileActivity.this, HomePageActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
-
     }
-// exemplo do prof para ir buscar as coisas
 
      @Override
     protected void onStart() {
          super.onStart();
          try {
-             Customer customer = new WSCustomerInfo(this.sessionId).execute().get();
-             insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
-             clientNameOutput.setText(customer.getName());
-             nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
-             dateOfBirthOutput.setText(customer.getDateOfBirth());
-             adressOutput.setText(customer.getAddress());
-         } catch (Exception e) {
-//             e.printStackTrace();
+             Customer customer = new WSCustomerInfo(_sessionId).execute().get();
+             _insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
+             _clientNameOutput.setText(customer.getName());
+             _nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
+             _dateOfBirthOutput.setText(customer.getDateOfBirth());
+             _addressOutput.setText(customer.getAddress());
+         } catch (ExecutionException e) {
+             e.printStackTrace();
+         } catch (InterruptedException e) {
+             e.printStackTrace();
          }
-
      }
-    }
+
+}
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,11 +18,11 @@ public class SettingsActivity  extends AppCompatActivity {
     private Button buttonPrivacyPolicy;
     private Button buttonTecnicalSupport;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        Log.d(LOG_TAG, "Settings Activity Created.");
 
         buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
         buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
