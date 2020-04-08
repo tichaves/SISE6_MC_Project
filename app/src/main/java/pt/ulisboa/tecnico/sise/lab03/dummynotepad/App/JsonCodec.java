@@ -31,9 +31,7 @@ public class JsonCodec {
             String dateOfBirth = jsonRootObject.getString("dateOfBirth");
             int policyNumber = Integer.parseInt(jsonRootObject.optString("policyNumber"));
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
-
-
-            //customer = new Customer(username, null, sessionId, policyNumber, person);
+            customer = new Customer(username, sessionId, policyNumber, person);
         } catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "decodeCustomerInfo:" + jsonResult);

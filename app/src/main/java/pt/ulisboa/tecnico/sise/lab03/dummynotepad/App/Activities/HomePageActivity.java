@@ -12,10 +12,12 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSCustomerInfo;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSLogout;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSMyClaims;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSNewClaim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
@@ -116,7 +118,6 @@ public class HomePageActivity extends AppCompatActivity {
                     // update the domain data structures
                     try {
                         boolean success = new WSNewClaim(_sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
-                        Log.d(LOG_TAG, "Estou Aqui. - " + success);
                         if (success){
                             Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
                             _claimList = new WSMyClaims(_sessionId).execute().get();
@@ -164,5 +165,21 @@ public class HomePageActivity extends AppCompatActivity {
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
     }
+
+    /*@Override
+    protected void onStart() {
+        super.onStart();
+        _globalState = (GlobalState) getApplicationContext();
+        try {
+            Customer customer = new WSCustomerInfo(_sessionId, HomePageActivity.this).execute().get();
+            Log.d(LOG_TAG, "Estou Aqui.");
+            _globalState.set_Customer(customer);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }*/
 
 }

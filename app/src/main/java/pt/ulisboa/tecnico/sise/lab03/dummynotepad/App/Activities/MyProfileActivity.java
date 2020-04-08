@@ -2,6 +2,7 @@ package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,16 +23,16 @@ public class MyProfileActivity  extends AppCompatActivity {
     private TextView _nifOutput;
     private TextView _addressOutput;
     private TextView _dateOfBirthOutput;
+
+    private GlobalState _globalState;
     private int _sessionId;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
-        GlobalState globalState = (GlobalState) getApplicationContext();
+        _globalState = (GlobalState) getApplicationContext();
 
         _buttonMenu         = (Button)   findViewById(R.id.settings_act_btn_menu);
         _insurePolicyOutput = (TextView) findViewById(R.id.myprofile_act_insure_policy_output);
@@ -40,7 +41,7 @@ public class MyProfileActivity  extends AppCompatActivity {
         _addressOutput      = (TextView) findViewById(R.id.myprofile_act_adress_output);
         _dateOfBirthOutput  = (TextView) findViewById(R.id.myprofile_act_birth_output);
 
-        _sessionId = globalState.get_sessionId();
+        _sessionId = _globalState.get_sessionId();
 
         _buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,21 +51,21 @@ public class MyProfileActivity  extends AppCompatActivity {
         });
     }
 
-     @Override
+    @Override
     protected void onStart() {
-         super.onStart();
-         try {
-             Customer customer = new WSCustomerInfo(_sessionId).execute().get();
-             _insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
-             _clientNameOutput.setText(customer.getName());
-             _nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
-             _dateOfBirthOutput.setText(customer.getDateOfBirth());
-             _addressOutput.setText(customer.getAddress());
-         } catch (ExecutionException e) {
-             e.printStackTrace();
-         } catch (InterruptedException e) {
-             e.printStackTrace();
-         }
+        super.onStart();
+        try {
+            Customer customer = new WSCustomerInfo(_sessionId, MyProfileActivity.this).execute().get();
+            _insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
+            _clientNameOutput.setText(customer.getName());
+            _nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
+            _dateOfBirthOutput.setText(customer.getDateOfBirth());
+            _addressOutput.setText(customer.getAddress());
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
      }
 
 }

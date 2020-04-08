@@ -25,6 +25,10 @@ public class Customer extends Person {
         _plateList = plateList;
     }
 
+    public Customer(String username, int sessionId, int policyNumber, Person person) {
+        this(username, null, sessionId, policyNumber, person, null);
+    }
+
     /*public Customer(String username, String password, int policyNumber,
                     Person person, List<ClaimRecord> claimList, List<String> plateList) {
         this(username, password, -1, policyNumber, person, claimList, plateList);
