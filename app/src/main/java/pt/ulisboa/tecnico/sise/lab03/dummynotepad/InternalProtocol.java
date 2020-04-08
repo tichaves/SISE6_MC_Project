@@ -15,6 +15,11 @@ public class InternalProtocol {
     public static final String KEY_NEW_CLAIM_DATE  = "CLAIM_DATE";
     public static final String KEY_NEW_CLAIM_DESCRIPTION  = "CLAIM_DESC";
 
+    //relevant for privacy activity request
+    public static final String PRIVACY_POLICY_REQUEST ="PRIVATE POLICY REQUEST";
+
+
+
     // relevant for the read note activity
     public static final String READ_CLAIM_INDEX   = "CLAIM_INDEX";
 

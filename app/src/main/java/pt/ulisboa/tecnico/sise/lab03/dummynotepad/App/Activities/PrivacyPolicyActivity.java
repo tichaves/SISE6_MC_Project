@@ -13,8 +13,6 @@ import static pt.ulisboa.tecnico.sise.lab03.dummynotepad.R.layout.activity_priva
 public class PrivacyPolicyActivity extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - PrivacyPolicyActivity";
 
-    private Button buttonMenu;
-    private Button getButtonMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
