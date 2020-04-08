@@ -42,8 +42,6 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
 
     }
 
- /*
-// Improvment
     @Override
     protected void onPostExecute(List<String> result) {
         Boolean isLoadSuccessful = result != null && result.size() != 0;
@@ -69,7 +67,8 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
 
             Log.d(TAG,toastMsg);
         }
+
+
     }
 
-*/
 }
