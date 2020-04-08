@@ -43,7 +43,7 @@ public class HomePageActivity extends AppCompatActivity {
         _sessionId = _globalState.get_sessionId();
 
         try {
-            _claimList = new WSMyClaims(_sessionId).execute().get();
+            _claimList = new WSMyClaims(_sessionId, HomePageActivity.this).execute().get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -120,7 +120,7 @@ public class HomePageActivity extends AppCompatActivity {
                         boolean success = new WSNewClaim(_sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
                         if (success){
                             Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
-                            _claimList = new WSMyClaims(_sessionId).execute().get();
+                            _claimList = new WSMyClaims(_sessionId, HomePageActivity.this).execute().get();
                             _globalState.set_ListClaim(_claimList);
                         } else {
                             Toast.makeText(getApplicationContext(), "Claim not submitted!", Toast.LENGTH_SHORT).show();
