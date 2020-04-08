@@ -15,14 +15,11 @@ public class InternalProtocol {
     public static final String KEY_NEW_CLAIM_DATE  = "CLAIM_DATE";
     public static final String KEY_NEW_CLAIM_DESCRIPTION  = "CLAIM_DESC";
 
-    //relevant for privacy activity request
-    public static final int MENU_REQUEST =4;
-
-
     // relevant for the read note activity
     public static final String READ_CLAIM_INDEX   = "CLAIM_INDEX";
 
     public static final int NEW_CLAIM_REQUEST         = 1;
     public static final int CLAIM_INFORMATION_REQUEST = 3;
     public static final int SETTINGS_REQUEST          = 2;
+    public static final int MENU_REQUEST              = 4;
 }

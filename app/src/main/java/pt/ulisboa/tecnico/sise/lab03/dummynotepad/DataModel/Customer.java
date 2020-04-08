@@ -9,13 +9,13 @@ public class Customer extends Person {
     private String _password;
     private int _policyNumber;
     private int _sessionId = -1;
-    private final List<ClaimItem> _claimList;
+    private final List<ClaimRecord> _claimList;
     private final List<String> _plateList;
 
 
 
-    public Customer(String username, String password, int sessionId, int policyNumber,
-                    Person person, List<ClaimItem> claimList, List<String> plateList) {
+    public Customer(String username, String password, int policyNumber, int sessionId,
+                    Person person, List<ClaimRecord> claimList, List<String> plateList) {
         super(person);
         _username = username;
         _password = password;
@@ -26,36 +26,36 @@ public class Customer extends Person {
     }
 
     public Customer(String username, String password, int policyNumber,
-                    Person person, List<ClaimItem> claimList, List<String> plateList) {
+                    Person person, List<ClaimRecord> claimList, List<String> plateList) {
         this(username, password, -1, policyNumber, person, claimList, plateList);
     }
 
     public Customer(String username, String password, int policyNumber, Person person) {
-        this(username, password, -1, policyNumber, person, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(username, password, -1, policyNumber, person, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
     public Customer(String username, int sessionId, int policyNumber, Person person) {
-        this(username, null, sessionId, policyNumber, person, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(username, null, sessionId, policyNumber, person, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
-    public Customer(int policyNumber, Person person, List<ClaimItem> claimList, List<String> plateList) {
+    public Customer(int policyNumber, Person person, List<ClaimRecord> claimList, List<String> plateList) {
         this(null, null, -1, policyNumber, person, claimList, plateList);
     }
 
     public Customer(int sessionId, int policyNumber, Person person) {
-        this(null, null, sessionId, policyNumber, person, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(null, null, sessionId, policyNumber, person, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
     public Customer(int sessionId, String username, String password) {
-        this(username, password, sessionId, -1, null, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(username, password, sessionId, -1, null, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
     public Customer(int sessionId, String username) {
-        this(username, null, sessionId, -1, null, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(username, null, sessionId, -1, null, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
     public Customer(int policyNumber, Person person) {
-        this(null, null, -1, policyNumber, person, new ArrayList<ClaimItem>(), new ArrayList<String>());
+        this(null, null, -1, policyNumber, person, new ArrayList<ClaimRecord>(), new ArrayList<String>());
     }
 
     public String getUsername() {
