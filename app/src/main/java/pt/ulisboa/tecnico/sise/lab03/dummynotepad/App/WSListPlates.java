@@ -52,16 +52,16 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
         } catch (Exception e) {
             try {
                 result = gs.getCustomer().getPlateList();
-            }catch (NullPointerException el) {
+            } catch (NullPointerException el) {
                 Log.d(TAG, el.toString());
 
             }
 
         }
         return result;
-
     }
 
+    /*
     @Override
     protected void onPostExecute(List<String> result) {
         Boolean isLoadSuccessful = result != null && result.size() != 0;
@@ -92,3 +92,4 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
     }*/
 
 }
+

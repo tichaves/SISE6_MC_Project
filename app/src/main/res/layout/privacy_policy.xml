@@ -32,13 +32,16 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/privacy_policy_description"
             android:layout_width="match_parent"
             android:layout_height="378dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:gravity="center"
+            android:text="The personal data provided by the holder when filling out forms existing on this website, will be processed and stored
+             by the Company computerized and are intended for its exclusive use, within the scope of pre-contractual relationships or arising from the contract entered into with its client, including their renovations.
+            The data will be kept in order to allow the identification of the holders until these relationships have definitively ceased.
+            The holder will have free access to his personal data, as long as he requests it in writing, and may proceed to its rectification." />
 
         <LinearLayout
             android:layout_width="match_parent"

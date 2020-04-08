@@ -32,8 +32,9 @@
             android:text="Terms and Conditions"
             android:textSize="24sp"
             android:textStyle="bold" />
+        
 
-        <EditText
+        <TextView
             android:id="@+id/terms_conditions_description"
             android:layout_width="match_parent"
             android:layout_height="378dp"
