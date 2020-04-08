@@ -1,15 +1,9 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.List;
-
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 
 public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
     public final static String TAG = "InSureApp - ListPlates";
