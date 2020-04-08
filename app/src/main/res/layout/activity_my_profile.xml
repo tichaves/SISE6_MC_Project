@@ -11,10 +11,8 @@
         android:layout_height="601dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="122dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,11 +21,12 @@
 
         <ImageView
             android:id="@+id/login_logo"
-            android:layout_width="419dp"
-            android:layout_height="117dp"
-            android:contentDescription="logo image "
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/insure_image" />
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
 
         <ImageView
             android:id="@+id/profile_image"
@@ -49,7 +48,10 @@
             android:id="@+id/myprofile_act_insure_policy_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Insure Policy:" />
+            android:text="Insure Policy:"
+
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/myprofile_act_insure_policy_output"

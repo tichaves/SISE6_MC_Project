@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <ImageView
         android:id="@+id/login_logo"
         android:layout_width="match_parent"
@@ -164,20 +166,20 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/new_claim_btn_submit"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="105dp"
-        android:layout_height="52dp"
-        android:text="@string/new_claim_btn_submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toEndOf="@+id/new_claim_btn_cancel"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.205" />
+      <Button
+          android:id="@+id/new_claim_btn_submit"
+          style="@style/Widget.AppCompat.Button"
+          android:layout_width="105dp"
+          android:layout_height="52dp"
+          android:text="@string/new_claim_btn_submit"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.488"
+          app:layout_constraintStart_toEndOf="@+id/new_claim_btn_cancel"
+          app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+          app:layout_constraintVertical_bias="0.205" />
 
-    <Button
+      <Button
         android:id="@+id/new_claim_btn_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -188,5 +190,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.2" />
+
+
 
 </android.support.constraint.ConstraintLayout>

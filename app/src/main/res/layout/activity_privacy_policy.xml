@@ -7,12 +7,17 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-            android:layout_width="409dp"
-            android:layout_height="729dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="1dp">
+        android:layout_width="409dp"
+        android:layout_height="601dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/login_logo"
@@ -37,9 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="378dp"
             android:ems="10"
-            android:gravity="center"
-            android:text="The personal data provided by the holder when filling out forms existing on this website, will be processed and stored
-             by the Company computerized and are intended for its exclusive use, within the scope of pre-contractual relationships or arising from the contract entered into with its client, including their renovations.
+            android:gravity="center|top"
+            android:text="The personal data provided by the holder when filling out forms existing on this website, will be processed and stored by the Company computerized and are intended for its exclusive use, within the scope of pre-contractual relationships or arising from the contract entered into with its client, including their renovations.
             The data will be kept in order to allow the identification of the holders until these relationships have definitively ceased.
             The holder will have free access to his personal data, as long as he requests it in writing, and may proceed to its rectification." />
 
@@ -63,7 +67,9 @@
                 android:layout_weight="1"
                 android:gravity="bottom|center"
                 android:text="Menu" />
+
         </LinearLayout>
+
 </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

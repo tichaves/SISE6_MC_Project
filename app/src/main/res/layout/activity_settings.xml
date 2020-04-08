@@ -23,8 +23,10 @@
             android:id="@+id/login_logo"
             android:layout_width="match_parent"
             android:layout_height="66dp"
-            android:contentDescription="logo image "
-            app:srcCompat="@drawable/insure_image" />
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
 
         <ImageView
             android:id="@+id/settings_image"
