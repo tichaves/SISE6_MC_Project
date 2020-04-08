@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(buttonLogin.getContext(), "Server connection failed!", Toast.LENGTH_LONG).show();
                     }else {
                         sessionId = id;
-                        globalState.setSessionId(id);
+                        globalState.set_sessionId(id);
                         // return an intent containing the title and body of the new note
                         Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
                         // write a toast message

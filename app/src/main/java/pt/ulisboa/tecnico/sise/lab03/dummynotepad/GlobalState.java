@@ -15,31 +15,29 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 
 public class GlobalState extends Application {
-    private int sessionId;
-    private Customer customer;
+    private int _sessionId;
+    private Customer _customer;
 
-    private List<ClaimItem> claimList;
+    private List<ClaimItem> _claimList;
 
-    public void setListClaim(List<ClaimItem> claimList) {
-        this.claimList = claimList;
+    public void set_ListClaim(List<ClaimItem> claimList) {
+        _claimList = claimList;
     }
 
-    public List<ClaimItem> getClaimList() {
-        return this.claimList;
+    public List<ClaimItem> get_ClaimList() {
+        return _claimList;
     }
 
-    public void setSessionId(int id) {
-        this.sessionId = id;
+    public void set_sessionId(int id) {
+        _sessionId = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer get_Customer() {
+        return _customer;
     }
 
-    public int getSessionId() {
-        return sessionId;
+    public int get_sessionId() { return _sessionId; }
 
-    }
     public void setCustomerLicensePlates(List<String> plates) {
         //this.customer.setPlateList(plates);
     }

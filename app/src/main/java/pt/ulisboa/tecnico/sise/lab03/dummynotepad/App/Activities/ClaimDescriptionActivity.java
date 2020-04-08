@@ -55,9 +55,9 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
 
         // obtain a reference to the note's data structure
         GlobalState context = (GlobalState) getApplicationContext();
-        ClaimItem claim = context.getClaimList().get(index);
+        ClaimItem claim = context.get_ClaimList().get(index);
         try {
-            ClaimRecord claimRecord = new WSClaimDetails(context.getSessionId(), claim.getId()).execute().get();
+            ClaimRecord claimRecord = new WSClaimDetails(context.get_sessionId(), claim.getId()).execute().get();
             // update the UI
             TextView claimTitle = (TextView) findViewById(R.id.claim_description_title_data);
             claimTitle.setText(claimRecord.getTitle());

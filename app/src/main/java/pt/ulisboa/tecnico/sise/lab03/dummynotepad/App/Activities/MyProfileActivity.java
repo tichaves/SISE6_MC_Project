@@ -38,7 +38,7 @@ public class MyProfileActivity  extends AppCompatActivity {
         nifOutput= (TextView)findViewById(R.id.myprofile_act_nif_output);
         adressOutput= (TextView)findViewById(R.id.myprofile_act_adress_output);
         dateOfBirthOutput= (TextView)findViewById(R.id.myprofile_act_birth_output);
-        this.sessionId = globalState.getSessionId();
+        this.sessionId = globalState.get_sessionId();
 
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
