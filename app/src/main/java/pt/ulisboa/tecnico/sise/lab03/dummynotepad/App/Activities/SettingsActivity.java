@@ -79,6 +79,7 @@ public class SettingsActivity  extends AppCompatActivity {
         switch (requestCode) {
             case InternalProtocol.MENU_POLICY_REQUEST:
                 if (resultCode == Activity.RESULT_CANCELED) {
+                    setResult(Activity.RESULT_OK);
                     finish();
                 }
         }
