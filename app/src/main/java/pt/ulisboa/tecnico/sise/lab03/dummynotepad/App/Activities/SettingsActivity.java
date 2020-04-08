@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class SettingsActivity  extends AppCompatActivity {
@@ -54,22 +55,32 @@ public class SettingsActivity  extends AppCompatActivity {
             }
 
         });
-        _buttonPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, PrivacyPolicyActivity.class);
-                startActivity(intent);
-            }
-        });
 
         _buttonTechnicalSupport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, TecnicalSupportActivity.class);
-               startActivity(intent);
+                startActivity(intent);
             }
         });
 
+        _buttonPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, PrivacyPolicyActivity.class);
+                startActivityForResult(intent, InternalProtocol.MENU_POLICY_REQUEST);
+            }
+        });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case InternalProtocol.MENU_POLICY_REQUEST:
+                if (resultCode == Activity.RESULT_CANCELED) {
+                    finish();
+                }
+        }
     }
 }

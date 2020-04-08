@@ -1,5 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,17 +21,26 @@ public class TermsPolicyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_terms_conditions);
 
-        _buttonMenu = (Button) findViewById(R.id.terms_menu_butn);
 
-        _buttonMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
+        // set up the listener of the back button
+        final Button buttonBack = (Button) findViewById(R.id.terms_back_butn);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(TermsPolicyActivity.this, HomePageActivity.class);
-                startActivity(intent);
+                setResult(Activity.RESULT_OK);
+                finish();
             }
 
         });
+        // set up the listener of the done button
+        final Button buttonMenu = (Button) findViewById(R.id.terms_menu_butn);
 
+        buttonMenu.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                setResult(Activity.RESULT_CANCELED);
+                finish();
+            }
+        });
     }
 }
-
