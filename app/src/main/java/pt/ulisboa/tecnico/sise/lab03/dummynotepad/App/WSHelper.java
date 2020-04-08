@@ -73,12 +73,21 @@ public class WSHelper {
             //String password =  jsonRootObject.getString("password");
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
 
-            return new Customer(username, null, policyNumber, person, listClaims(sessionId), listPlates(sessionId)) ;  // dummy Customer without username and password, just used for details
+            return new Customer(username, null, sessionId, policyNumber, person, listPlates(sessionId));  // dummy Customer without username and password, just used for details
         }  catch (JSONException e) {
             //e.printStackTrace();
             Log.d(TAG, "getCustomerInfo - JSONResult:" + jsonResult);
         }
         return null;
+    }
+
+    public static List<ClaimRecord> listClaimRecords(int sessionId) throws Exception {
+        List<ClaimRecord> listClaimRecord = null;
+        List<ClaimItem> listClaims = listClaims(sessionId);
+        for (ClaimItem claimItem : listClaims) {
+            listClaimRecord.add(getClaimInfo(sessionId, claimItem.getId()));
+        }
+        return listClaimRecord;
     }
 
     public static ClaimRecord getClaimInfo(int sessionId, int claimId) throws Exception {

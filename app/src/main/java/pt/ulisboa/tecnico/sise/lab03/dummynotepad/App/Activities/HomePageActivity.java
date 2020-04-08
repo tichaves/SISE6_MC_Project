@@ -116,6 +116,7 @@ public class HomePageActivity extends AppCompatActivity {
                     // update the domain data structures
                     try {
                         boolean success = new WSNewClaim(_sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
+                        Log.d(LOG_TAG, "Estou Aqui. - " + success);
                         if (success){
                             Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
                             _claimList = new WSMyClaims(_sessionId).execute().get();
