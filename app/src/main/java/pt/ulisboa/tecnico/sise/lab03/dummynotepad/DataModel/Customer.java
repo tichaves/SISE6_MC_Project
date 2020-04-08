@@ -10,7 +10,7 @@ public class Customer extends Person {
     private int _sessionId= -1;
     //  private final List<Claim> _claimList;
  //   private final List<ClaimRecord>;
-    private final List<String> _plateList;
+     private final List<String> _plateList;
 
 
 
@@ -22,7 +22,8 @@ public class Customer extends Person {
         _sessionId = sessionId;
         _policyNumber = policyNumber;
 //       _claimList = claimList;
-        this._plateList = plateList;
+
+        _plateList = plateList;
     }
 /*    public Customer(String username, String password, int policyNumber,
                     Person person, List<ClaimRecord> claimList, List<String> plateList) {
@@ -103,9 +104,10 @@ public String getUsername() {
 //        return _claimList;
 //    }
 //
-    public List<String> getPlateList() {
-       return _plateList;
+public List<String> getPlateList() {
+    return _plateList;
     }
+
 //
 //    public boolean addClaim(ClaimRecord claimRecord) {
 //        return _claimList.add(claimRecord);
@@ -164,4 +166,6 @@ public String getUsername() {
                "Password:" + _password + ", " +
                 "Policy Number:" + _policyNumber + ".";
     }
+
+
 }

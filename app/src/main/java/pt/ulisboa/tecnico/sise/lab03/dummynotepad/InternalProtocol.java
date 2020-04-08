@@ -5,8 +5,8 @@ public class InternalProtocol {
     public static final String SESSION_ID = "SESSION_ID";
 
     // file cache names
-    public final static String CACHE_CUSTOMER = "inSureCacheCustomer";
-    public final static String AUTO_INSURE = "AutoInSure";
+   // public final static String CACHE_CUSTOMER = "inSureCacheCustomer";
+  //  public final static String AUTO_INSURE = "AutoInSure";
 
 
     // relevant for the login activity
