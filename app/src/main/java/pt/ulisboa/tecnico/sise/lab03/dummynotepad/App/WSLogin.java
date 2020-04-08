@@ -11,12 +11,12 @@ public class WSLogin extends AsyncTask<String, String, Integer> {
         _textView = textView;
     }*/
 
-    private String userId;
-    private String password;
+    private String _userId;
+    private String _password;
 
     public WSLogin(String user, String password) {
-        this.userId = user;
-        this.password = password;
+        _userId = user;
+        _password = password;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class WSLogin extends AsyncTask<String, String, Integer> {
         publishProgress("Testing method call login wrong...");
         try {
 
-            sessionId = WSHelper.login(this.userId, this.password);        // username doesn't exist
+            sessionId = WSHelper.login(_userId, _password);        // username doesn't exist
             Log.d(TAG, "Login result => " + sessionId);
             publishProgress("ok.\n");
         } catch (Exception e) {

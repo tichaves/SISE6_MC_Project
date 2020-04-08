@@ -11,35 +11,43 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.HomePageActivit
 
 public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
     public final static String TAG = "ListPlates";
-    private Context context;
-    private Integer sessionId;
-    private Boolean exceptionCaught = false;
+    private Integer _sessionId;
+    private String _claimTitle;
+    private String _claimPlate;
+    private String _claimDate;
+    private String _claimDescription;
+//    private Context context;
+//    private Boolean exceptionCaught = false;
 
-    public WSNewClaim (Integer sessionId, Context context) {
-        this.context = context;
-        this.sessionId = sessionId;
-
-    }
+//    public WSNewClaim (Integer sessionId, Context context) {
+//        this.context = context;
+//        this.sessionId = sessionId;
+//    }
 
     public WSNewClaim(int sessionId, String claimTitle, String claimPlate, String claimDate, String claimDescription) {
+        _sessionId = sessionId;
+        _claimTitle = claimTitle;
+        _claimPlate = claimPlate;
+       _claimDate = claimDate;
+        _claimDescription = claimDescription;
     }
 
     @Override
     protected Boolean doInBackground(String... params) {
         try {
             Log.d(TAG,"Claim details: " + params[0] + ", " + params[1] + ", " + params[2]);
-            boolean r = WSHelper.submitNewClaim(sessionId, params[0], params[1], params[2], params[3]);
+            boolean r = WSHelper.submitNewClaim(_sessionId, params[0], params[1], params[2], params[3]);
 
             Log.d(TAG, "Submit new claim => " + r);
             return r;
         } catch (Exception e) {
             Log.d(TAG, e.toString());
-            exceptionCaught = true;
+            //exceptionCaught = true;
         }
         return false;
     }
 
-    @Override
+    /*@Override
     protected void onPostExecute(Boolean result) {
         Log.d(TAG,"Submit new claim => " + result + ", and Exception Triggered => " + exceptionCaught);
 
@@ -62,6 +70,6 @@ public class WSNewClaim extends AsyncTask<String, Void, Boolean> {
                 Toast.LENGTH_LONG)
                 .show();
 
-    }
+    }*/
 
 }

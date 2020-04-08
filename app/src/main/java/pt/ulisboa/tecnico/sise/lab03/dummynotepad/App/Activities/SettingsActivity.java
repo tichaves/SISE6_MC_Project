@@ -1,5 +1,6 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,16 +32,16 @@ public class SettingsActivity  extends AppCompatActivity {
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
-                startActivity(intent);
+                setResult(Activity.RESULT_CANCELED);
+                finish();
             }
         });
 
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, HomePageActivity.class);
-                startActivity(intent);
+                setResult(Activity.RESULT_OK);
+                finish();
             }
         });
 

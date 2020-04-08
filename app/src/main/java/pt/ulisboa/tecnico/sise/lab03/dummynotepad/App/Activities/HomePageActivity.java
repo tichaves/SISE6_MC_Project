@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSLogout;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSMyClaims;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSNewClaim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
@@ -85,7 +86,7 @@ public class HomePageActivity extends AppCompatActivity {
                 // return an intent containing the title and body of the new note
                 Intent intent = new Intent(HomePageActivity.this, SettingsActivity.class);
 
-                startActivity(intent);
+                startActivityForResult(intent, InternalProtocol.SETTINGS_REQUEST);
             }
         });
 
@@ -141,6 +142,25 @@ public class HomePageActivity extends AppCompatActivity {
                     Log.d(InternalProtocol.LOG, "Internal error: unknown result code.");
                 }
                 break;
+
+            case InternalProtocol.SETTINGS_REQUEST:
+                if (resultCode == Activity.RESULT_CANCELED){
+                    try {
+                        boolean successLogout = new WSLogout(_sessionId).execute().get();
+                        if(successLogout){
+                            Toast.makeText(getApplicationContext(), "See you soon!", Toast.LENGTH_SHORT).show();
+                            _globalState.set_sessionId(0);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Logout failed!", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             default:
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
