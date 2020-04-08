@@ -37,8 +37,8 @@ public class GlobalState extends Application {
 
     public int get_sessionId() {
         return _sessionId;
-
     }
+
     public void setCustomerLicensePlates(List<String> plates) {
         //this.customer.setPlateList(plates);
     }

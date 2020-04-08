@@ -21,15 +21,15 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class HomePageActivity extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - Home Page";
-    private Button buttonMyProfile;
-    private Button buttonMyClaims;
-    private Button buttonSettings;
-    private Button buttonNewClaim;
-    private Button buttonHelp;
+    private Button _buttonMyProfile;
+    private Button _buttonMyClaims;
+    private Button _buttonSettings;
+    private Button _buttonNewClaim;
+    private Button _buttonHelp;
 
-    private List<ClaimItem> claimList;
-    private GlobalState globalState;
-    private int sessionId;
+    private List<ClaimItem> _claimList;
+    private GlobalState _globalState;
+    private int _sessionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +37,26 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         Log.d(LOG_TAG, "HomePage Activity Created.");
 
-        globalState = (GlobalState) getApplicationContext();
-
-        buttonMyProfile = (Button)  findViewById(R.id.home_page_my_profile_btn);
-        buttonMyClaims  = (Button) findViewById(R.id.home_page_claim_history_btn);
-        buttonSettings  = (Button) findViewById(R.id.home_page_settings_btn);
-        buttonNewClaim  = (Button)  findViewById(R.id.home_page_new_claim_btn);
-        buttonHelp      = (Button)  findViewById(R.id.home_page_help_btn);
-
-        this.sessionId = globalState.get_sessionId();
+        _globalState = (GlobalState) getApplicationContext();
+        _sessionId = _globalState.get_sessionId();
 
         try {
-            this.claimList = new WSMyClaims(this.sessionId).execute().get();
+            _claimList = new WSMyClaims(_sessionId).execute().get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        globalState.set_ListClaim(this.claimList);
+        _globalState.set_ListClaim(_claimList);
 
-        buttonMyProfile.setOnClickListener(new View.OnClickListener() {
+        _buttonMyProfile = (Button)  findViewById(R.id.home_page_my_profile_btn);
+        _buttonMyClaims  = (Button) findViewById(R.id.home_page_claim_history_btn);
+        _buttonSettings  = (Button) findViewById(R.id.home_page_settings_btn);
+        _buttonNewClaim  = (Button)  findViewById(R.id.home_page_new_claim_btn);
+        _buttonHelp      = (Button)  findViewById(R.id.home_page_help_btn);
+
+        _buttonMyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "MyProfile debug message!");
 
@@ -68,7 +67,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        buttonMyClaims.setOnClickListener(new View.OnClickListener() {
+        _buttonMyClaims.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "MyClaims debug message!");
 
@@ -79,7 +78,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        buttonSettings.setOnClickListener(new View.OnClickListener() {
+        _buttonSettings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "MyProfile debug message!");
 
@@ -90,7 +89,7 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        buttonNewClaim.setOnClickListener(new View.OnClickListener() {
+        _buttonNewClaim.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "MyProfile debug message!");
 
@@ -104,7 +103,6 @@ public class HomePageActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d(LOG_TAG, "No Claims:" + globalState.get_ClaimList().size());
         switch (requestCode) {
             case InternalProtocol.NEW_CLAIM_REQUEST:
 
@@ -118,11 +116,11 @@ public class HomePageActivity extends AppCompatActivity {
 
                     // update the domain data structures
                     try {
-                        boolean success = new WSNewClaim(this.sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
+                        boolean success = new WSNewClaim(_sessionId, claimTitle, claimPlate, claimDate, claimDescription).execute().get();
                         if (success){
                             Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
-                            this.claimList = new WSMyClaims(sessionId).execute().get();
-                            globalState.set_ListClaim(this.claimList);
+                            _claimList = new WSMyClaims(_sessionId).execute().get();
+                            _globalState.set_ListClaim(_claimList);
                         } else {
                             Toast.makeText(getApplicationContext(), "Claim not submitted!", Toast.LENGTH_SHORT).show();
                         }
@@ -131,7 +129,7 @@ public class HomePageActivity extends AppCompatActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                Log.d(LOG_TAG, "No Claims:" + globalState.get_ClaimList().size());
+                Log.d(LOG_TAG, "No Claims:" + _globalState.get_ClaimList().size());
 /*
                 // refresh the list on screen
                 _listView.setAdapter(new ArrayAdapter<>(this,
@@ -146,7 +144,7 @@ public class HomePageActivity extends AppCompatActivity {
             default:
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
-        Log.d(LOG_TAG, "No Claims: " + claimList.size());
+        Log.d(LOG_TAG, "No Claims: " + _claimList.size());
     }
 
 }

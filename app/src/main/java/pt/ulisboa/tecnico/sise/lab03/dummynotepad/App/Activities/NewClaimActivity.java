@@ -50,6 +50,7 @@ public class NewClaimActivity  extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_claim);
+        Log.d(LOG_TAG, "NewClaim Activity Created.");
 
         _buttonSubmit  = (Button)  findViewById(R.id.new_claim_btn_submit);
         _buttonCancel  = (Button)  findViewById(R.id.new_claim_btn_cancel);
@@ -93,8 +94,6 @@ public class NewClaimActivity  extends AppCompatActivity {
                 resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_DATE, claimDate);
                 resultIntent.putExtra(InternalProtocol.KEY_NEW_CLAIM_DESCRIPTION, claimDesc);
                 setResult(Activity.RESULT_OK, resultIntent);
-                // write a toast message
-                Toast.makeText(v.getContext(), "Claim saved", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
