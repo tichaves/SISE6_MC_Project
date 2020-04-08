@@ -77,7 +77,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/login_btn_login"
+            android:id="@+id/login_act_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_btn_login" />

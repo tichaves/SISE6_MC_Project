@@ -32,6 +32,7 @@ public class JsonCodec {
             int policyNumber = Integer.parseInt(jsonRootObject.optString("policyNumber"));
             Person person = new Person(customerName, fiscalNumber, address, dateOfBirth);
 
+
             //customer = new Customer(username, null, sessionId, policyNumber, person);
         } catch (JSONException e) {
             //e.printStackTrace();
