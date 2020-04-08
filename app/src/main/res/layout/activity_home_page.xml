@@ -7,34 +7,34 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="390dp"
+        android:layout_height="601dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
             android:id="@+id/login_logo"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:contentDescription="logo image "
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/insure_image" />
-
 
         <TextView
             android:id="@+id/home_page_menu_title"
-            android:layout_width="419dp"
-            android:layout_height="45dp"
-            android:text="Hey! Welcome to InSure"
-            android:textStyle="bold" />
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:text="Welcome to InSure"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <Button
             android:id="@+id/home_page_claim_history_btn"

@@ -31,7 +31,7 @@
         <ImageView
             android:id="@+id/settings_image"
             android:layout_width="match_parent"
-            android:layout_height="136dp"
+            android:layout_height="107dp"
             app:srcCompat="@drawable/settings" />
 
         <TextView
@@ -42,8 +42,7 @@
             android:paddingVertical="@dimen/activity_vertical_margin"
             android:text="@string/textView_settings"
             android:textColor="#020202"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/terms_condition_button"
@@ -67,6 +66,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
 

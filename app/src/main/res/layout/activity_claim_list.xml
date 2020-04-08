@@ -6,27 +6,27 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6"
+        android:layout_width="390dp"
+        android:layout_height="601dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/login_logo"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
-            app:srcCompat="@drawable/insure_image" />
+            android:layout_height="66dp"
+            android:contentDescription="@string/insure_logo"
+            app:srcCompat="@drawable/insure_image"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
 
         <ImageView
             android:id="@+id/My_claims_image"
@@ -40,35 +40,26 @@
             android:layout_width="wrap_content"
             android:layout_height="42dp"
             android:layout_marginLeft="150dp"
-            android:text="@string/claim_details_my_claims"
+            android:text="My Claims"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:visibility="visible"
+            android:textSize="20dp"
             tools:visibility="visible" />
 
+        <ListView
+            android:id="@+id/my_claims_list_list"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            tools:ignore="MissingConstraints"
+            tools:itemCount="10" />
 
+        <Button
+            android:id="@+id/my_claims_menu_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu" />
 
 
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/my_claims_list_list"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        app:layout_constraintBottom_toTopOf="@+id/my_claims_menu_button"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints"
-        tools:itemCount="10" />
-
-    <Button
-        android:id="@+id/my_claims_menu_button"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.751" />
 
 </android.support.constraint.ConstraintLayout>

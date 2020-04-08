@@ -44,7 +44,10 @@
     <string name= "textView_settings">Settings</string>
     <string name= "settings_logout_btn">Logout</string>
     <string name= "settings_act_btn_menu">Menu</string>
-    <string name= "claim_details_my_claims">My Claims</string>
+    <string name= "failed_login_try_again">Try again</string>
+
+    <string name= "wrong_id_input">Sorry but your login information is not valid.
+    Please try again!</string>
 
 </resources>
 
