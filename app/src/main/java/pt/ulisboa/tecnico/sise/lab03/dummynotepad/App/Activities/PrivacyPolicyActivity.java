@@ -37,6 +37,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(Activity.RESULT_CANCELED);
+                finish();
             }
         });
     }
