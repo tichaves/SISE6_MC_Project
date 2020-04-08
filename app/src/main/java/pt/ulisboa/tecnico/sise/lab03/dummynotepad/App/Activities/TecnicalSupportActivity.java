@@ -15,16 +15,16 @@ public class TecnicalSupportActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = "InSureApp - TecnicalSupportActivity";
 
-    private Button buttonMenu;
+    private Button _buttonMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_tecnical_support);
 
-        buttonMenu = (Button) findViewById(R.id.tecnical_support_menu_butn);
+        _buttonMenu = (Button) findViewById(R.id.tecnical_support_menu_butn);
 
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
+        _buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TecnicalSupportActivity.this, HomePageActivity.class);

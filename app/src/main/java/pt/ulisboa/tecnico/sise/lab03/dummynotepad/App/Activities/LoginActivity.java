@@ -17,10 +17,10 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - Login";
-    private Button buttonLogin;
-    private EditText editTextUser;
-    private EditText editTextPassword;
-    private int sessionId;
+    private Button _buttonLogin;
+    private EditText _editTextUser;
+    private EditText _editTextPassword;
+    private int _sessionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +29,17 @@ public class LoginActivity extends AppCompatActivity {
 
         final GlobalState globalState = (GlobalState) getApplicationContext();
 
-        buttonLogin      = (Button)  findViewById(R.id.login_act_login_btn);
-        editTextUser     = (EditText)findViewById(R.id.login_act_email_input);
-        editTextPassword = (EditText)findViewById(R.id.login_act_pass_input);
+        _buttonLogin      = (Button)  findViewById(R.id.login_act_login_btn);
+        _editTextUser     = (EditText)findViewById(R.id.login_act_email_input);
+        _editTextPassword = (EditText)findViewById(R.id.login_act_pass_input);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+        _buttonLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Log.d(LOG_TAG, "Login debug message!");
-                Log.d(LOG_TAG, editTextUser.getText().toString());
-                String user = editTextUser.getText().toString();
-                String password = editTextPassword.getText().toString();
+                Log.d(LOG_TAG, _editTextUser.getText().toString());
+                String user = _editTextUser.getText().toString();
+                String password = _editTextPassword.getText().toString();
 
                 /*// check the user
                 if (user.equals("")) {
@@ -51,11 +51,11 @@ public class LoginActivity extends AppCompatActivity {
                     int id = new WSLogin(user, password).execute().get();
                     Log.d(LOG_TAG,"ID VALUE:"+id);
                     if (id==0) {
-                        Toast.makeText(buttonLogin.getContext(), "Login failed: Try again!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(_buttonLogin.getContext(), "Login failed: Try again!", Toast.LENGTH_LONG).show();
                     }else if (id == -1){
-                        Toast.makeText(buttonLogin.getContext(), "Server connection failed!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(_buttonLogin.getContext(), "Server connection failed!", Toast.LENGTH_LONG).show();
                     }else {
-                        sessionId = id;
+                        _sessionId = id;
                         globalState.set_sessionId(id);
                         // return an intent containing the title and body of the new note
                         Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
@@ -69,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                editTextUser.setText("");
-                editTextPassword.setText("");
+                _editTextUser.setText("");
+                _editTextPassword.setText("");
 
             }
         });

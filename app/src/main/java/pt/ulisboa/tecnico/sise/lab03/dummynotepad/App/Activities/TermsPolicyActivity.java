@@ -13,16 +13,16 @@ import static pt.ulisboa.tecnico.sise.lab03.dummynotepad.R.layout.activity_terms
 public class TermsPolicyActivity extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - TermsPolicyActivity";
 
-    private Button buttonMenu;
+    private Button _buttonMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_terms_conditions);
 
-        buttonMenu = (Button) findViewById(R.id.terms_menu_butn);
+        _buttonMenu = (Button) findViewById(R.id.terms_menu_butn);
 
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
+        _buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TermsPolicyActivity.this, HomePageActivity.class);

@@ -12,11 +12,11 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class SettingsActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - Settings";
-    private Button buttonLogout;
-    private Button buttonMenu;
-    private Button buttonTermsAndConditions;
-    private Button buttonPrivacyPolicy;
-    private Button buttonTecnicalSupport;
+    private Button _buttonLogout;
+    private Button _buttonMenu;
+    private Button _buttonTermsAndConditions;
+    private Button _buttonPrivacyPolicy;
+    private Button _buttonTechnicalSupport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,13 @@ public class SettingsActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         Log.d(LOG_TAG, "Settings Activity Created.");
 
-        buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
-        buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
-        buttonTermsAndConditions = (Button) findViewById(R.id.terms_support_button);
-        buttonPrivacyPolicy = (Button) findViewById(R.id.privacy_policy_btn);
-        buttonTecnicalSupport = (Button) findViewById(R.id.tecnical_support_btn);
+        _buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
+        _buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
+        _buttonTermsAndConditions = (Button) findViewById(R.id.terms_support_button);
+        _buttonPrivacyPolicy = (Button) findViewById(R.id.privacy_policy_btn);
+        _buttonTechnicalSupport = (Button) findViewById(R.id.tecnical_support_btn);
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        _buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setResult(Activity.RESULT_CANCELED);
@@ -38,7 +38,7 @@ public class SettingsActivity  extends AppCompatActivity {
             }
         });
 
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
+        _buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setResult(Activity.RESULT_OK);
@@ -46,7 +46,7 @@ public class SettingsActivity  extends AppCompatActivity {
             }
         });
 
-        buttonTermsAndConditions.setOnClickListener(new View.OnClickListener() {
+        _buttonTermsAndConditions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, TermsPolicyActivity.class);
@@ -54,7 +54,7 @@ public class SettingsActivity  extends AppCompatActivity {
             }
 
         });
-        buttonPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+        _buttonPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, PrivacyPolicyActivity.class);
@@ -62,7 +62,7 @@ public class SettingsActivity  extends AppCompatActivity {
             }
         });
 
-        buttonTecnicalSupport.setOnClickListener(new View.OnClickListener() {
+        _buttonTechnicalSupport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this, TecnicalSupportActivity.class);

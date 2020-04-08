@@ -9,10 +9,10 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
 
 public class WSMyClaims extends AsyncTask<Integer, String, List<ClaimItem>> {
     public final static String TAG = "WSMyClaims";
-    private int sessionId;
+    private int _sessionId;
 
     public WSMyClaims(int sessionId) {
-        this.sessionId = sessionId;
+        _sessionId = sessionId;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class WSMyClaims extends AsyncTask<Integer, String, List<ClaimItem>> {
          */
         publishProgress("Testing method call listClaims...");
         try {
-            List<ClaimItem> claimItemList = WSHelper.listClaims(sessionId);
+            List<ClaimItem> claimItemList = WSHelper.listClaims(_sessionId);
             if (claimItemList != null) {
                 String m = claimItemList.size() > 0 ? "" : "empty array";
                 for (ClaimItem claimItem : claimItemList ) {

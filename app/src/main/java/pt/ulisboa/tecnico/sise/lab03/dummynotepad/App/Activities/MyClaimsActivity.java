@@ -20,7 +20,7 @@ import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
 
 public class MyClaimsActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - My Claims";
-    private ListView listView;
+    private ListView _listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +32,13 @@ public class MyClaimsActivity  extends AppCompatActivity {
         List<ClaimItem> claimList = globalState.get_ClaimList();
 
         // assign adapter to list view
-        this.listView = (ListView) findViewById(R.id.my_claims_list_list);
+        _listView = (ListView) findViewById(R.id.my_claims_list_list);
         ArrayAdapter<ClaimItem> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, claimList);
-        this.listView.setAdapter(adapter);
+        _listView.setAdapter(adapter);
 
         // attach click listener to list view items
-        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

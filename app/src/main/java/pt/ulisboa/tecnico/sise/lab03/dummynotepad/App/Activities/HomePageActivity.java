@@ -26,7 +26,6 @@ public class HomePageActivity extends AppCompatActivity {
     private Button _buttonMyClaims;
     private Button _buttonSettings;
     private Button _buttonNewClaim;
-    private Button _buttonHelp;
 
     private List<ClaimItem> _claimList;
     private GlobalState _globalState;
@@ -55,7 +54,6 @@ public class HomePageActivity extends AppCompatActivity {
         _buttonMyClaims  = (Button) findViewById(R.id.home_page_claim_history_btn);
         _buttonSettings  = (Button) findViewById(R.id.home_page_settings_btn);
         _buttonNewClaim  = (Button)  findViewById(R.id.home_page_new_claim_btn);
-        _buttonHelp      = (Button)  findViewById(R.id.home_page_help_btn);
 
         _buttonMyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
