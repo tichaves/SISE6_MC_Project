@@ -54,12 +54,21 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/tecnical_support_back_butn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="bottom|center"
+                android:text="Back" />
+
+            <Button
                 android:id="@+id/tecnical_support_menu_butn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="bottom|center"
                 android:text="Menu" />
+
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
