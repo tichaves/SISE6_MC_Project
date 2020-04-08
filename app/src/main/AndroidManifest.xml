@@ -26,6 +26,8 @@
         <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.MyProfileActivity"></activity>
         <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.SettingsActivity"></activity>
         <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.TermsPolicyActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.PrivacyPolicyActivity"></activity>
+        <activity android:name="pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.TecnicalSupportActivity"></activity>
     </application>
 
 </manifest>

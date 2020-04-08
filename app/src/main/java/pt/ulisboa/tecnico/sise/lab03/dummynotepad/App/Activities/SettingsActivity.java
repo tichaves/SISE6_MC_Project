@@ -13,6 +13,8 @@ public class SettingsActivity  extends AppCompatActivity {
     private Button buttonLogout;
     private Button buttonMenu;
     private Button buttonTermsAndConditions;
+    private Button buttonPrivacyPolicy;
+    private Button buttonTecnicalSupport;
 
 
     @Override
@@ -23,6 +25,8 @@ public class SettingsActivity  extends AppCompatActivity {
         buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
         buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
         buttonTermsAndConditions = (Button) findViewById(R.id.terms_support_button);
+        buttonPrivacyPolicy = (Button) findViewById(R.id.privacy_policy_btn);
+        buttonTecnicalSupport = (Button) findViewById(R.id.tecnical_support_btn);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +52,22 @@ public class SettingsActivity  extends AppCompatActivity {
             }
 
         });
+        buttonPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, PrivacyPolicyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonTecnicalSupport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, TecnicalSupportActivity.class);
+               startActivity(intent);
+            }
+        });
+
 
     }
 }
