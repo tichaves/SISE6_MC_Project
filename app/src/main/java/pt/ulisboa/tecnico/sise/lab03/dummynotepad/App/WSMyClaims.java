@@ -7,6 +7,7 @@ import java.util.List;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.Activities.HomePageActivity;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
+import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.Customer;
 
 public class WSMyClaims extends AsyncTask<Integer, String, List<ClaimItem>> {
@@ -47,6 +48,13 @@ public class WSMyClaims extends AsyncTask<Integer, String, List<ClaimItem>> {
 
             JsonFileManager.jsonWriteToFile(_homePageActivity.getApplicationContext(), claimsFileName, claimsJson);
             Log.d(TAG, "customerInfo: written to - " + claimsFileName);
+
+//            List<ClaimRecord> claimRecordList = WSHelper.listClaimRecords(_sessionId);
+//            String claimRecordsJson = JsonCodec.(claimRecordList);
+//            Log.d(TAG, "customerInfo: customerJson - " + claimRecordsJson);
+//
+//            JsonFileManager.jsonWriteToFile(_homePageActivity.getApplicationContext(), claimsFileName, claimRecordsJson);
+//            Log.d(TAG, "customerInfo: written to - " + claimRecordsFileName);
 
             return claimItemList;
         } catch (Exception e) {

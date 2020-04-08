@@ -165,21 +165,4 @@ public class HomePageActivity extends AppCompatActivity {
                 Log.d(InternalProtocol.LOG, "Internal error: unknown intent message.");
         }
     }
-
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        _globalState = (GlobalState) getApplicationContext();
-        try {
-            Customer customer = new WSCustomerInfo(_sessionId, HomePageActivity.this).execute().get();
-            Log.d(LOG_TAG, "Estou Aqui.");
-            _globalState.set_Customer(customer);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }*/
-
 }

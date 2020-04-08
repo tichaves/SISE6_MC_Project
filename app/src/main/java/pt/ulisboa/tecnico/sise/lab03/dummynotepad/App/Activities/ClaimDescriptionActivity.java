@@ -57,7 +57,7 @@ public class ClaimDescriptionActivity extends AppCompatActivity {
         GlobalState context = (GlobalState) getApplicationContext();
         ClaimItem claim = context.get_ClaimList().get(index);
         try {
-            ClaimRecord claimRecord = new WSClaimDetails(context.get_sessionId(), claim.getId()).execute().get();
+            ClaimRecord claimRecord = new WSClaimDetails(context.get_sessionId(), claim.getId(), ClaimDescriptionActivity.this).execute().get();
             // update the UI
             TextView claimTitle = (TextView) findViewById(R.id.claim_description_title_data);
             claimTitle.setText(claimRecord.getTitle());
