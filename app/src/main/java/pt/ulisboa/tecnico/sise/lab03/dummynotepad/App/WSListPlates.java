@@ -41,6 +41,7 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
         return result;
 
     }
+
  /*
 // Improvment
     @Override
@@ -71,4 +72,4 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
     }
 
 */
-    }
+}

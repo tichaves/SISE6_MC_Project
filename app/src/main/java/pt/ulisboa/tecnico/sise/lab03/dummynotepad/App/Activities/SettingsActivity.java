@@ -12,6 +12,8 @@ public class SettingsActivity  extends AppCompatActivity {
     private static final String LOG_TAG = "InSureApp - Settings";
     private Button buttonLogout;
     private Button buttonMenu;
+    private Button buttonTermsAndConditions;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class SettingsActivity  extends AppCompatActivity {
 
         buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
         buttonLogout = (Button) findViewById(R.id.settings_logout_btn);
+        buttonTermsAndConditions = (Button) findViewById(R.id.terms_support_button);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,5 +39,15 @@ public class SettingsActivity  extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buttonTermsAndConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, TermsPolicyActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
     }
 }

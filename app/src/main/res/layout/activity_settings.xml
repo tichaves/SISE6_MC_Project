@@ -43,6 +43,25 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/terms_support_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms and Support" />
+
+        <Button
+            android:id="@+id/privacy_policy_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy" />
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tecnical Support" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,6 +84,7 @@
                 android:text="@string/settings_act_btn_menu"
                 android:textColor="#050505" />
         </LinearLayout>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
