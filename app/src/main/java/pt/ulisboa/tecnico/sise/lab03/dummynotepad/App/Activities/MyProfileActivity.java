@@ -24,6 +24,7 @@ public class MyProfileActivity  extends AppCompatActivity {
     private int sessionId;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +33,13 @@ public class MyProfileActivity  extends AppCompatActivity {
         final GlobalState globalState = (GlobalState) getApplicationContext();
 
         buttonMenu = (Button) findViewById(R.id.settings_act_btn_menu);
-        insurePolicyOutput = (TextView) findViewById(R.id.myprofile_act_insure_policy_output);
-        clientNameOutput = (TextView) findViewById(R.id.myprofile_act_name_output);
-        nifOutput = (TextView) findViewById(R.id.myprofile_act_nif_output);
-        adressOutput = (TextView) findViewById(R.id.myprofile_act_adress_output);
-        dateOfBirthOutput = (TextView) findViewById(R.id.myprofile_act_birth_output);
-        this.sessionId = globalState.getSessionId();
+        insurePolicyOutput = (TextView)findViewById(R.id.myprofile_act_insure_policy_output);
+        clientNameOutput= (TextView)findViewById(R.id.myprofile_act_name_output);
+        nifOutput= (TextView)findViewById(R.id.myprofile_act_nif_output);
+        adressOutput= (TextView)findViewById(R.id.myprofile_act_adress_output);
+        dateOfBirthOutput= (TextView)findViewById(R.id.myprofile_act_birth_output);
+        this.sessionId = globalState.get_sessionId();
 
-    // set up the button listener for the "Menu" button
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,20 +51,20 @@ public class MyProfileActivity  extends AppCompatActivity {
     }
 // exemplo do prof para ir buscar as coisas
 
-    @Override
+     @Override
     protected void onStart() {
-        super.onStart();
-        try {
-            Customer customer = new WSCustomerInfo(this.sessionId).execute().get();
-            insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
-            clientNameOutput.setText(customer.getName());
-            nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
-            dateOfBirthOutput.setText(customer.getDateOfBirth());
-            adressOutput.setText(customer.getAddress());
-        } catch (Exception e) {
+         super.onStart();
+         try {
+             Customer customer = new WSCustomerInfo(this.sessionId).execute().get();
+             insurePolicyOutput.setText(String.valueOf(customer.getPolicyNumber()));
+             clientNameOutput.setText(customer.getName());
+             nifOutput.setText(String.valueOf(customer.getFiscalNumber()));
+             dateOfBirthOutput.setText(customer.getDateOfBirth());
+             adressOutput.setText(customer.getAddress());
+         } catch (Exception e) {
+//             e.printStackTrace();
+         }
 
-        }
-
-
+     }
     }
-}
+

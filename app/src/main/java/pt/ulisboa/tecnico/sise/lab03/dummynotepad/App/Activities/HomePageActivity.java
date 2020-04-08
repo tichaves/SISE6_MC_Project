@@ -9,14 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSMyClaims;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.App.WSNewClaim;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimItem;
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.DataModel.ClaimRecord;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.InternalProtocol;
 import pt.ulisboa.tecnico.sise.lab03.dummynotepad.R;
@@ -47,7 +45,7 @@ public class HomePageActivity extends AppCompatActivity {
         buttonNewClaim  = (Button)  findViewById(R.id.home_page_new_claim_btn);
         buttonHelp      = (Button)  findViewById(R.id.home_page_help_btn);
 
-        this.sessionId = globalState.getSessionId();
+        this.sessionId = globalState.get_sessionId();
 
         try {
             this.claimList = new WSMyClaims(this.sessionId).execute().get();
@@ -57,7 +55,7 @@ public class HomePageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        globalState.setListClaim(this.claimList);
+        globalState.set_ListClaim(this.claimList);
 
         buttonMyProfile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -106,7 +104,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
+        Log.d(LOG_TAG, "No Claims:" + globalState.get_ClaimList().size());
         switch (requestCode) {
             case InternalProtocol.NEW_CLAIM_REQUEST:
 
@@ -124,7 +122,7 @@ public class HomePageActivity extends AppCompatActivity {
                         if (success){
                             Toast.makeText(getApplicationContext(), "Claim submitted successfully!", Toast.LENGTH_SHORT).show();
                             this.claimList = new WSMyClaims(sessionId).execute().get();
-                            globalState.setListClaim(this.claimList);
+                            globalState.set_ListClaim(this.claimList);
                         } else {
                             Toast.makeText(getApplicationContext(), "Claim not submitted!", Toast.LENGTH_SHORT).show();
                         }
@@ -133,7 +131,7 @@ public class HomePageActivity extends AppCompatActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                Log.d(LOG_TAG, "No Claims:" + globalState.getClaimList().size());
+                Log.d(LOG_TAG, "No Claims:" + globalState.get_ClaimList().size());
 /*
                 // refresh the list on screen
                 _listView.setAdapter(new ArrayAdapter<>(this,

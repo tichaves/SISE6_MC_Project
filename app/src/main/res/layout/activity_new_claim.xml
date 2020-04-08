@@ -95,7 +95,7 @@
             app:layout_constraintTop_toBottomOf="@+id/new_claim_image"
             tools:layout_editor_absoluteX="-1dp" />
 
-        <EditText
+        <Spinner
             android:id="@+id/new_claim_plate_input"
             android:layout_width="140dp"
             android:layout_height="wrap_content"

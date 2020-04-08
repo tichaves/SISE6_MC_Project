@@ -1,20 +1,40 @@
 package pt.ulisboa.tecnico.sise.lab03.dummynotepad.App;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.List;
 
-import pt.ulisboa.tecnico.sise.lab03.dummynotepad.GlobalState;
-
 public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
-    public final static String TAG = "ListPlates";
+    public final static String TAG = "InSureApp - ListPlates";
+    private int _sessionId;
 
-    private Spinner spinner;
+    public WSListPlates(int sessionId) { _sessionId = sessionId; }
+
+    @Override
+    protected List<String> doInBackground(Integer... params) {
+        /*
+         * Test method call invocation: listPlates
+         */
+        try {
+            List<String> plateList = WSHelper.listPlates(_sessionId);
+            if (plateList != null) {
+                String m = plateList.size() > 0 ? "" : "empty array";
+                for (String plate : plateList) {
+                    m += " (" + plate + ")";
+                }
+                Log.d(TAG, "List plates result => " + m);
+            } else {
+                Log.d(TAG, "List plates result => null.");
+            }
+            return plateList;
+        } catch (Exception e) {
+            Log.d(TAG, e.toString());
+            return null;
+        }
+    }
+
+    /*private Spinner spinner;
     private GlobalState gs;
 
     public WSListPlates(Spinner spinner, Context context) {
@@ -69,6 +89,6 @@ public class WSListPlates extends AsyncTask<Integer, Void, List<String>> {
         }
 
 
-    }
+    }*/
 
 }

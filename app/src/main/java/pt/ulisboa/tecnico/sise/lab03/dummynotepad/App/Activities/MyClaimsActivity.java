@@ -29,7 +29,7 @@ public class MyClaimsActivity  extends AppCompatActivity {
 
         // place the note list in the application domain
         GlobalState globalState = (GlobalState) getApplicationContext();
-        List<ClaimItem> claimList = globalState.getClaimList();
+        List<ClaimItem> claimList = globalState.get_ClaimList();
 
         // assign adapter to list view
         this.listView = (ListView) findViewById(R.id.my_claims_list_list);
